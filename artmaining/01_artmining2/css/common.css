@@ -1,0 +1,133 @@
+@charset "utf-8";
+/* font-weight : 300, 400, 500, 600 */
+@font-face{
+  font-family: NanumS;
+  font-weight: 300;
+  src: url("../../../fonts/NanumSquareL.eot");
+  src: local("※"), 
+      url("../../../fonts/NanumSquareL.woff") format("woff"), 
+      url("../../../fonts/NanumSquareL.ttf") format("truetype");
+}
+@font-face{
+  font-family: NanumS;
+  font-weight: 400;
+  src: url("../../../fonts/NanumSquareR.eot");
+  src: local("※"), 
+      url("../../../fonts/NanumSquareR.woff") format("woff"), 
+      url("../../../fonts/NanumSquareR.ttf") format("truetype");
+}
+@font-face{
+  font-family: NanumS;
+  font-weight: 500;
+  src: url("../../../fonts/NanumSquareB.eot");
+  src: local("※"), 
+      url("../../../fonts/NanumSquareB.woff") format("woff"), 
+      url("../../../fonts/NanumSquareB.ttf") format("truetype");
+}
+@font-face{
+  font-family: NanumS;
+  font-weight: 600;
+  src: url("../../../fonts/NanumSquareEB.eot");
+  src: local("※"), 
+      url("../../../fonts/NanumSquareEB.woff") format("woff"), 
+      url("../../../fonts/NanumSquareEB.ttf") format("truetype");
+}
+@font-face{
+  font-family: AvantGarB;
+  src: url("../font/AvantGarBol.woff");
+}
+/* reset */
+body, h1, h2, h3, h4, p, ul, button{margin: 0;padding: 0;}
+body{font-family: NanumS;font-weight: 400;font-size: 16px;color: #242424;line-height: 1.15;}
+h1, h2, h3, h4{font-size: 100%}
+ul{list-style: none;}
+a:link, a:visited, a:hover, a:active{text-decoration: none;color: inherit}
+button{border: none;background: none;cursor: pointer;font-family: inherit;font-size: inherit;color: inherit}
+img{vertical-align: top}/* 이미지 하단에 생기는 불필요한 여백 제거 */
+header, nav, section, article, footer{display: block}
+
+/* common class */
+.blind{font-size: 0px;line-height: 0;width: 1px;height: 1px;overflow: hidden;position: absolute;top: 0;left: -9999px;text-indent: -9999px}
+.clearfix:after{content: "";display: block;clear: both;}
+.f_l{float: left;}
+.f_r{float: right}
+.p_r{position: relative;}
+.p_a{position: absolute;}
+.area{width: 980px;padding-left: 50px;padding-right: 50px;margin: 0px auto;}
+.btn_round{text-align: center;-webkit-transition: all 0.5s;-moz-transition: all 0.5s;-o-transition: all 0.5s;transition: all 0.5s;}
+.btn_round:hover, .btn_round:focus{-webkit-border-radius: 8px;-moz-border-radius: 8px;border-radius: 8px;letter-spacing: 2px;}
+
+/* skip navigation */
+#skip a{position: absolute;top: 0;left: -9999px;z-index: 1000;}
+#skip a:focus{left: 0;background: #ffb400;text-align: center;font-weight: 600;color: #000;width: 100%;line-height: 2;}/* 배경색, 글자가운데 위치, bold */
+
+/* header */
+/* transition 한번에 정리 */
+#header, .logo a:before, #gnb ul li a, .util .lang .arrow_down{-webkit-transition: all 0.3s;-moz-transition: all 0.3s;-o-transition: all 0.3s;transition: all 0.3s;}
+#header{position: fixed;top: 0;left: 0;width: 100%;height: 76px;border-bottom: 1px solid transparent;background: #fff;z-index: 800;}
+#header.notop{background: rgba(255,255,255,0.9);border-bottom-color: rgba(24,24,24,0.2);}
+.logo{top: 21px;left: 0;padding-left: 50px;}
+.logo a{display: block}
+.logo a:before{content: "";position: absolute;top: 0.4px;right: 0.9px;width: 8px;height: 8px;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;background: #f9c200;z-index: -1;}
+.logo a:hover:before, .logo a:focus:before{-webkit-transform: scale(4);-moz-transform: scale(4);-o-transform: scale(4);-ms-transform: scale(4);transform: scale(4);}
+#gnb{text-align: center}
+/* #gnb ul li{display: inline-block;height: 76px;line-height: 76px;} */
+#gnb{width: 625px;margin: 0 auto;}
+#gnb ul li{float: left;height: 76px;line-height: 76px;}
+#gnb ul li + li{margin-left: 60px;}
+#gnb ul .gnb1{width: 90px;}
+#gnb ul .gnb2{width: 52px;}
+#gnb ul .gnb3{width: 95px;}
+#gnb ul .gnb4{width: 185px;}
+#gnb ul li a{font-size: 18px;color: #141414;}
+#gnb ul li a:hover, #gnb ul li a:focus{color: #000;font-weight: 600}
+
+.util{right: 0;top: 0;width: 226px;height: 76px;}
+.util > ul, .util > ul li, .util .lang{float: left;}
+.util > ul li a{display: block;width: 40px;height: 76px;line-height: 76px;text-align: center;font-size: 23px;color: #ffb400}
+.util > ul li:nth-child(2) a{font-size: 20px}
+.util > ul li:nth-child(1) a:hover, .util > ul li:nth-child(1) a:focus{color: #7e4a9b}
+.util > ul li:nth-child(2) a:hover, .util > ul li:nth-child(2) a:focus{color: #3c599a}
+.util > ul li:nth-child(3) a:hover, .util > ul li:nth-child(3) a:focus{color: #fe0400}
+.util .lang{margin: 26px 50px 0 20px;width: 36px;height: 20px;overflow: hidden;border-bottom: 2px solid #000;}
+.util .lang ul li a{display: block;height: 20px;line-height: 20px;font-size: 14px;color: #000}
+.util .lang .arrow_down{top: 7px;right: 0;}
+.util .lang.active .arrow_down{-webkit-transform: rotateX(180deg);transform: rotateX(180deg);}
+
+/* top이동 버튼 */
+.btnTop{position: fixed;right: 0;bottom: 70px;z-index: 900;}
+
+/* footer */
+#footer{border-top: 1px solid #e3e3e3;padding-top: 36px;font-size: 18px;color: #000;}
+#footer .area .foot_top{line-height: 2;font-weight: 300;padding-bottom: 20px;}
+#footer .area .foot_btm{padding-bottom: 100px;}
+#footer .area .foot_btm .sns li{float: left;}
+#footer .area .foot_btm .sns li + li{margin-left: 20px;}
+#footer .area .foot_btm .sns li a{display: block;width: 36px;height: 36px;text-indent: -9999px}
+#footer .area .foot_btm .sns .list1 a{background: url("../images/common/footer_blog_nor.png")}
+#footer .area .foot_btm .sns .list2 a{background: url("../images/common/footer_instagram_nor.png")}
+#footer .area .foot_btm .sns .list3 a{background: url("../images/common/footer_facebook_nor.png")}
+#footer .area .foot_btm .sns .list4 a{background: url("../images/common/footer_youtube_nor.png")}
+#footer .area .foot_btm .sns .list1 a:hover, #footer .area .foot_btm .sns .list1 a:focus{background: url("../images/common/footer_blog_over.png")}
+#footer .area .foot_btm .sns .list2 a:hover, #footer .area .foot_btm .sns .list2 a:focus{background: url("../images/common/footer_instagram_over.png")}
+#footer .area .foot_btm .sns .list3 a:hover, #footer .area .foot_btm .sns .list3 a:focus{background: url("../images/common/footer_facebook_over.png")}
+#footer .area .foot_btm .sns .list4 a:hover, #footer .area .foot_btm .sns .list4 a:focus{background: url("../images/common/footer_youtube_over.png")}
+#footer .area .foot_btm .f_r a{display: block;line-height: 44px;}
+#footer .area .foot_btm .f_r > a, #footer .area .foot_btm .f_r .family{float: left;}
+#footer .area .foot_btm .f_r > a{margin-right: 10px;}
+#footer .area .foot_btm .f_r > a img{vertical-align: middle;margin-left: 15px;}
+#footer .area .foot_btm .f_r > a, #footer .area .foot_btm .f_r .family .site{width: 228px;height: 44px;border: 1px solid #cecece;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+#footer .area .foot_btm .f_r .family > a{float: left;}
+#footer .area .foot_btm .f_r .family .site{padding-left: 20px;}
+#footer .area .foot_btm .f_r .family .site:hover, #footer .area .foot_btm .f_r .family .site:focus{-webkit-border-radius: 0 0 8px 8px;-moz-border-radius: 0 0 8px 8px;border-radius: 0 0 8px 8px;letter-spacing: 2px;}
+#footer .area .foot_btm .f_r .family .site .icon{position: absolute;top: 0;right: 0;width: 44px;height: 43px;border-left: 1px solid #cecece;}
+#footer .area .foot_btm .f_r .family .site .icon:before, #footer .area .foot_btm .f_r .family .site .icon:after{content: "";position: absolute;top: 21px;left: 12px;width: 20px;height: 1px;background: #000}
+#footer .area .foot_btm .f_r .family .site .icon:after{-webkit-transform: rotate(90deg);-moz-transform: rotate(90deg);-o-transform: rotate(90deg);-ms-transform: rotate(90deg);transform: rotate(90deg);}
+#footer .area .foot_btm .f_r .family .site:hover .icon:after, #footer .area .foot_btm .f_r .family .site:focus .icon:after{-webkit-transform: rotate(0deg);-moz-transform: rotate(0deg);-o-transform: rotate(0deg);-ms-transform: rotate(0deg);transform: rotate(0deg);}
+
+#footer .area .foot_btm .f_r .family ul{display: none;position: absolute;left: 0;bottom: 43px;background: #fff;padding-left: 29px;border: 1px solid #cecece;width: 197px;}
+#footer .area .foot_btm .f_r .family ul li a:hover, #footer .area .foot_btm .f_r .family ul li a:focus{letter-spacing: 2px;font-weight: 600}
+#footer .area .foot_btm .f_r .family .go{margin-left: 5px;border: 1px solid #cecece;width: 50px;}
+
+/* footer  공통 transition */
+#footer .area .foot_btm .sns li a, #footer .area .foot_btm .f_r .family a, #footer .area .foot_btm .f_r .family .site .icon:after {-webkit-transition: all 0.5s;-moz-transition: all 0.5s;-o-transition: all 0.5s;transition: all 0.5s;}

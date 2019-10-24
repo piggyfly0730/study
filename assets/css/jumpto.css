@@ -1,0 +1,96 @@
+
+.page_container {
+  margin: 0 auto;
+}
+
+
+.jumpto-cotainer {
+  position: relative;
+}
+.jumpto-cotainer .jumpto-block {
+	margin-left: 320px;
+	background-color: #fff;
+	padding: 20px;
+	margin-top: 20px;
+}
+
+.jumpto-subnav {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 270px;
+  height: 500px;
+  overflow-y:scroll; 
+  background-color: #e9ecf6;
+  padding: 15px;
+}
+
+.jumpto-subnav .jumpto-second {
+  display: none;
+}
+
+.jumpto-subnav.fixed {
+  position: fixed !important;
+  left: auto;
+  top: 25px;
+  width: 270px;
+  margin-left: 0px;
+  margin-top: 50px;
+}
+
+.jumpto-subnav.fixed.bottom {
+  top: auto;
+  bottom: 0;
+  position: absolute !important;
+}
+
+.jumpto-subnav ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.jumpto-subnav ul li{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.jumpto-subnav ul li a {
+ padding:3px 15px;
+ display: block;
+ box-sizing: border-box; 
+ -moz-box-sizing: border-box;
+ -webkit-box-sizing: border-box;
+ color: #8a8a8a;
+ font-size: 12px;
+}
+
+.jumpto-subnav ul li a:hover, .jumpto-subnav ul li a.active {
+  background: #eee;
+}
+.jumpto-subnav ul > li > ul > li > a{
+  padding-left: 15px;
+}
+.jumpto-title{
+	background-color: #fff;
+}
+.jumpto-title, .jumpto-close a{
+  background: #fff;
+  color: #8a8a8a;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px 10px;
+  display: block;
+}
+
+.jumpto-first {
+	background-color: #fff;
+	color: #eee;
+}
+
+
+
+
+

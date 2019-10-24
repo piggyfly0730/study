@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        a {text-decoration:none; }
+        body{
+            height: 100vh;
+            background: url(img/welcome_bg.jpg) no-repeat center center;
+            background-size: cover;
+        }   
+
+        @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+            only screen and (min-device-pixel-ratio: 1.5),
+            only screen and (min-resolution: 1.5dppx){
+            body {background: url(img/welcome_bg@2x.jpg) no-repeat center center; background-size: cover;}
+       }
+
+        @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+            only screen and (min-device-pixel-ratio: 1.5),
+            only screen and (min-resolution: 1.5dppx){
+            body {background: url(img/welcome_bg@3x.jpg) no-repeat center center; background-size: cover;}
+       }
+
+        header{
+            height: 70vh; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column nowrap ; 
+        }
+        body:after {
+            content: '';
+            position: absolute; left:0; top:0;
+            width: 100vw; height: 100vh;
+            opacity: 0.5;
+            background-color: #000000;
+            z-index: -1;
+        }
+        h1 {font-size: 40px; line-height: 48px; color: #ffffff; font-family: 'Courgette', cursive; font-weight: normal;}
+        h2 {font-size: 40px; line-height: 48px; color: #ffffff; font-family: 'Courgette', cursive; font-weight: normal;}
+        p{font-size: 14px; color:#ffffff; z-index: 1000; padding-top:10px; text-align: center; font-family: 'Noto Sans', sans-serif;}
+        
+        .btn_wrap {position: absolute; bottom: 20px; left: 0;
+            width: 100%;}
+        .btn_wrap a {
+            display: block;
+            width: 92%; margin: 1.5vh 4%;
+            height: 56px; line-height: 56px;
+            border-radius:44px ;
+            background-color: #223eaf;
+            text-align: center;
+            color: #fff;
+            font-size: 25px;
+
+        }
+        .btn_wrap a.facebook {
+             }
+        .btn_wrap a.never {background: #25ab25;}
+
+    </style>
+  <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Welcome</h1>
+        <h2>To My Site</h2>
+        <p>This is Jung Yoon's Site</p>
+    </header> 
+    <div class="btn_wrap">
+        <a href="#" class="facebook">Facebook</a>
+        <a href="#" class="never">NEVER</a>
+    </div>
+    
+</body>
+</html>

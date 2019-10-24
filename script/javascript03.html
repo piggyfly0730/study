@@ -1,0 +1,47 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script>
+
+			var x1 = 1000; // (전역)변수 x1에 숫자를 1000을 저장
+			var x2 = 2000; // (전역)변수 x2를 숫자를 2000을 저장
+			var x3;			// (전역)변수 x3를 선언
+
+			x1 = 100;  //(전역)변수 x1에 숫자를 1000에서 100으로 변경
+			x2 = 200; //(전역)변수 x2에 숫자를 2000에서 200으로 변경
+
+			function func(){
+
+				var x1 = 3000;  //(지역)변수 x1에 숫자를 3000을 저장
+				var x2 = 4000; // (지역)변수 x2에 숫자를 4000을 저장
+
+				 x1 = 300;  //  (지역)변수 x1에 숫자를 3000에서 300으로 변경
+				 x2 = 400; //  (지역)변수 x2를 숫자를 4000에서 400으로 변경
+				 x3 = 500;			// (지역)변수 x3에 숫자 500을 저장 
+
+				document.write("함수 안<br>");
+				document.write(x1);
+				document.write("<br>");
+				document.write(x2);
+				document.write("<br>");
+				document.write(x3);
+				document.write("<br><br>");
+			}
+			func();
+
+			document.write("함수 밖<br>");
+			document.write(x1);
+			document.write("<br>");
+			document.write(x2);
+		
+
+
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+	</html>

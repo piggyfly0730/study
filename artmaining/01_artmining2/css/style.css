@@ -1,0 +1,132 @@
+/* =========index=========== */
+#content{min-width: 1080px;overflow: hidden;}/* #promotion2 이미지 크기가 지나치게 커서 가로에 스크롤바가 생성되므로 overflow: hidden; */
+#btnAppDown{position: fixed;right: 190px;bottom: 30px;z-index: 900;}
+/* 1) 슬라이더 */
+#mainSlider{position: relative;height: 40vw;min-height: 432px;min-width: 1080px;overflow: hidden;margin-top: 77px;}
+  /* 공통 transition */
+  #mainSlider .visual li:before, #mainSlider .visual li .right_bg, #mainSlider .visual li .txtbox{-webkit-transition: all 0.4s;-moz-transition: all 0.4s;-o-transition: all 0.4s;transition: all 0.4s;}
+#mainSlider:before{content: "";width: 40%;height: 100%;display: block;background: #dadada}
+#mainSlider .visual li{position: absolute;top: 0;left: 0;bottom: 0;right: 0;z-index: 10;}
+#mainSlider .visual li.on{z-index: 20;}
+/* .visual li 오렌지바 */
+#mainSlider .visual li:before{content: "";position: absolute;top: 0;left: 0;width: 40%;height: 0;background: #ffb400}
+#mainSlider .visual li.on:before{height: 100%;}
+/* .visual li 오른쪽 이미지 */
+#mainSlider .visual li .right_bg{margin-left: 40%;}
+#mainSlider .visual li .right_bg img{width: 100%;height: auto;}
+/* .visual li 텍스트 영역 */
+#mainSlider .visual li .txtbox{position: absolute;top: 10vw;left: 25%;transform: translateY(-2vw);color: #000}
+#mainSlider .visual li.on .txtbox{transform: translateY(0vw);}
+#mainSlider .visual li .txtbox h4{font-size: 2.6vw;line-height: 2.7vw;font-family: AvantGarB}
+#mainSlider .visual li .txtbox p{font-size: 1.2vw;line-height: 1.7vw;margin-top: 1.4vw;}
+/* .visual li 오른쪽 이미지 와 .visual li 텍스트 영역 투명도 공통 선언 : ie8, ie7, 상위브라우저, filter의 투명도는 0~100사이의 값 */
+#mainSlider .visual li .right_bg, #mainSlider .visual li .txtbox{-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';filter:Alpha(Opacity=0);opacity: 0;}
+#mainSlider .visual li.on .right_bg, #mainSlider .visual li.on .txtbox{-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';filter:Alpha(Opacity=100);opacity: 1;}
+/* controlbox : play와 stop 버튼, 인디케이터 */
+#mainSlider .controlbox{position: absolute;right: 0;bottom: 0;width: 60%;height: 15.1%;background: #fff;z-index: 30;text-align: center;color: #000;font-size: 0.7vw}
+#mainSlider .controlbox  > *{position: absolute;top: 25%;height: 50%;}
+#mainSlider .controlbox  .play_stop{left: 60%;width: 5%;}
+#mainSlider .controlbox  .play_stop button{display: none;width: 100%;height: 100%;line-height: 100%;background: #ffb400}
+#mainSlider .controlbox  .play_stop button.on{display: block}
+#mainSlider .controlbox  .paging{left: 10%;width: 50%;}
+#mainSlider .controlbox  .paging li{display: table;float: left;width: calc(100% / 3);height: 100%;}
+#mainSlider .controlbox  .paging li a{display: table-cell;vertical-align: middle;height: 100%;background: #ccc;border-left: 1px solid #fff;border-right: 1px solid #fff;}
+#mainSlider .controlbox  .paging li.on a{background: #ffb400}
+/* br태그가 존재하는 여러줄 텍스트를 수직 가운데에 위치 시키려면 부모태그에 display: table;을 나 자신은 display: table-cell;vertical-align: middle; 지정하면 된다 */
+/*  10vw => ???px
+1920모니터 : 1920/100 * 10vw = 192px 
+1680모니터 : 168px
+1440모니터 : 144px
+*/
+
+/* 공통 스타일 */
+.title{font-size: 40px;line-height: 58px;text-align: center;}
+.cnt_txt .sub_tit{font-family: AvantGarB;font-size: 60px;line-height: 58px;margin-bottom: 20px;}
+.cnt_txt strong{display: block;font-size: 30px;line-height: 40px;font-weight: 500}
+.cnt_txt p{position: relative;line-height: 30px;padding-top: 81px;}
+.cnt_txt p:before{content: "";position: absolute;top: 55px;left: 0;width: 33px;height: 1px;background: #242424}
+.cnt_txt.text_right{text-align: right} 
+.cnt_txt.text_right p:before{right: 0;left: auto}/* left와 right를 동시에 갖으면 left의 우선순위가 높습니다 */
+
+.fade .up, .fade .down{-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';filter:Alpha(Opacity=0);opacity: 0;-webkit-transition: all 0.5s;-moz-transition: all 0.5s;-o-transition: all 0.5s;transition: all 0.5s;}
+.fade .up{-webkit-transform: translateY(70px);-moz-transform: translateY(70px);-o-transform: translateY(70px);-ms-transform: translateY(70px);transform: translateY(70px);}
+.fade .down{-webkit-transform: translateY(-70px);-moz-transform: translateY(-70px);-o-transform: translateY(-70px);-ms-transform: translateY(-70px);transform: translateY(-70px)}
+.fade.on .up, .fade.on .down{-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';filter:Alpha(Opacity=100);opacity: 1;-webkit-transform: translateY(0px);-moz-transform: translateY(0px);-o-transform: translateY(0px);-ms-transform: translateY(0px);transform: translateY(0px)}
+
+
+/* 2) our business */
+#business .title{padding-top: 180px;}
+#business .area .fade{margin-top: 100px;height: 508px;}
+#business .area .fade .up{top: 0;right: 0;}
+#business .btm{padding-top: 340px;background: #f0f0f0}
+#business .btm .area{height: 700px;}
+#business .btm .area .up{top: 0;left: 50px;}
+
+/* 3) promotion1 */
+#promotion1{margin-top: 160px;padding-top: 71px;height: 579px;background: url("../images/main/main-promotion-bg.jpg") no-repeat fixed right 10px top}
+#promotion1 .area .cnt_txt{background: #fff;width: 519px;height: 508px;padding: 50px 0 0 50px;}
+
+/* 4) copyright */
+#copyright .area{height: 990px;}
+#copyright .area .cnt_txt{top: 270px;right: 50px;}
+
+/* 5) promotion2 */
+#promotion2{position: relative;padding: 125px 0 120px;background: #f0f0f0}
+#promotion2 .sub_tit{font-family: NanumS;font-weight: 600;font-size: 50px;line-height: 50px;letter-spacing: -2px}
+#promotion2 .sub_tit span{display: block;font-weight: 400}
+#promotion2 .cnt_txt p{padding: 20px 0 30px;}
+#promotion2 .cnt_txt p:before{display: none;}
+#promotion2 .cnt_txt .app_link{display: inline-block;font-size: 20px;line-height: 34px;color: #141414;font-weight: 500;margin-bottom: 35px;}
+#promotion2 .cnt_txt .app_link .arrow{display: inline-block;width: 18px;height: 18px;margin-left: 10px;border-radius: 50%;background: rgba(14,14,14,.5);vertical-align: middle;overflow: hidden;}
+#promotion2 .cnt_txt .app_link .arrow:after{content: "";position: absolute;top: 5px;left: 6px;border-top: 4px solid transparent;border-bottom: 4px solid transparent;border-left: 6px solid #fff;}
+#promotion2 .cnt_txt .app_link:hover, #promotion2 .cnt_txt .app_link:focus{color: #ffb400}
+#promotion2 .cnt_txt .app_link:hover .arrow, #promotion2 .cnt_txt .app_link:focus .arrow{background: #ffb400;}
+#promotion2 .cnt_txt .app_link:hover .arrow:after, #promotion2 .cnt_txt .app_link:focus .arrow:after{animation: move 0.6s 0s infinite;}
+
+@-webkit-keyframes move {
+  0% {-webkit-transform: translateX(-16px)}
+  100% {-webkit-transform: translateX(16px)}
+}
+@-moz-keyframes move {
+  0% {-moz-transform: translateX(-16px)}
+  100% {-moz-transform: translateX(16px)}
+}
+@-o-keyframes move {
+  0% {-o-transform: translateX(-16px)}
+  100% {-o-transform: translateX(16px)}
+}
+@keyframes move {
+  0% {transform: translateX(-16px)}
+  100% {transform: translateX(16px)}
+}
+#promotion2 .btn .btn_round{display: inline-block;width: 278px;height: 78px;line-height: 78px;;border: 1px solid #000;font-size: 26px;color: #000}
+#promotion2 .btn .btn_round:hover, #promotion2 .btn .btn_round:focus{border-color: #ffb400;}
+#promotion2 .btn .btn_round + .btn_round{margin-left: 20px;}
+#promotion2 .btn .btn_round img{vertical-align: middle;margin-right: 10px;}
+#promotion2 .btn div .qrcode{margin-top: -75px;margin-bottom: 18px;}
+#promotion2 .btn .f_r{text-align: right}
+#promotion2 .btn div p{font-size: 14px;line-height: 16px;color: #000;}
+#promotion2 .area > img{position: absolute;top: -132px;left: 50%;margin-left: -100px;}
+
+/* 6) mainIssue */
+#mainIssue{padding-bottom: 170px;}
+#mainIssue .title{padding: 110px 0 70px;}
+#mainIssue .issue li{float: left;width: 236px;height: 330px;-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';filter:Alpha(Opacity=0);opacity: 0;-webkit-transform: scale(0.2);-moz-transform: scale(0.2);-o-transform: scale(0.2);-ms-transform: scale(0.2);transform: scale(0.2);}
+#mainIssue .issue.on li{-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';filter:Alpha(Opacity=100);opacity: 1;-webkit-transform: scale(1);-moz-transform: scale(1);-o-transform: scale(1);-ms-transform: scale(1);transform: scale(1);}
+#mainIssue .issue li + li{margin-left: 12px;}
+#mainIssue .issue li a .img{height: 237px;overflow: hidden;background: #000}
+#mainIssue .issue li a .img img{height: 237px;width: auto;-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=80)';filter:Alpha(Opacity=80);opacity: 0.8;}
+#mainIssue .issue li a:hover .img img, #mainIssue .issue li a:focus .img img{-webkit-transform: scale(1.1);-moz-transform: scale(1.1);-o-transform: scale(1.1);-ms-transform: scale(1.1);transform: scale(1.1);}
+#mainIssue .issue li a .txt{position: relative;margin-top: 5px;padding: 15px 25px 0;}
+#mainIssue .issue li a .txt:before{content: "";position: absolute;top: 20px;left: 0;width: 16px;height: 4px;background: #000;}
+#mainIssue .issue li a:hover .txt:before, #mainIssue .issue li a:focus .txt:before{-webkit-transform: rotateZ(225deg);-moz-transform: rotateZ(225deg);-o-transform: rotateZ(225deg);transform: rotateZ(225deg);}
+#mainIssue .issue li a .txt p{line-height: 22px;height: 44px;margin-bottom: 7px;color: #000;font-weight: 500}
+#mainIssue .issue li a .txt span{display: block;font-size: 14px;color: #909090;}
+
+
+/* transition 공통 */
+#mainIssue .issue li, #mainIssue .issue li a .img img, #mainIssue .issue li a .txt:before{-webkit-transition: all 0.5s;-moz-transition: all 0.5s;-o-transition: all 0.5s;transition: all 0.5s;}
+
+/* =========sub1========= */
+
+/* =========sub========== */

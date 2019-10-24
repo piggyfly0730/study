@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="webstoryboy">
+    <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+    <meta name="keywords" content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webstoryboy, publisher, html5, html4, css3, html, markup, design">
+    <title>layout</title>
+
+    <!-- web_font -->
+    <link href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css' rel='stylesheet' type='text/css' />
+
+    <!-- css -->
+    <link href="../assets/css/bootstrapTheme.css" rel="stylesheet">
+    <link href="../assets/css/custom.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/prism.css" rel="stylesheet">
+
+    <!-- Prettify -->
+    <link href="../assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Icon -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/ico/icon_57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/ico/icon_114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../assets/ico/icon_72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../assets/ico/icon_144.png">
+
+    <!-- hmlt5 support -->
+    <!--[if lt IE 9]><script src="../assets/js/html5shiv.js"></script><![endif]-->
+
+    <!-- IE6,7 support -->
+    <!--[if lte IE 7]><link rel="stylesheet" href="comm/css/ie7.css" type="text/css" ><![endif]-->
+    <!--[if IE 8]><link rel="stylesheet" href="comm/css/ie8.css" type="text/css" ><![endif]-->
+
+    <!--[if lte IE 6]>
+		<p style="font-size: 12px; color: #fff; background: #2885b0; padding:5px 0; margin: 0; text-align: center">
+			사용하고 계신 브라우저는 최신 웹 브라우저가 아닙니다. 업그레이드를 하거나 다른 최신 브라우저 사용을 권장합니다.
+			<a href="http://www.microsoft.com/korea/ie" target="_blank" >업그레이드,</a>
+			<a href="http://www.mozilla.or.kr/ko/" target="_blank">파이어폭스,</a>
+			<a href="http://kr.opera.com/download/" target="_blank">오페라,</a>,
+			<a href="http://support.apple.com/kb/DL1531?viewlocale=ko_KR&locale=ko_KR" target="_blank">사파리,</a>
+			<a href="http://www.google.com/chrome?hl=ko" target="_blank">크롬</a></p>
+			<![endif]-->
+    <style>
+        .face {
+            display: block;
+            margin: 20px auto;
+            width: 400px;
+        }
+
+        .face img {
+            width: 400px;
+            border-radius: 50%;
+        }
+
+        .face1 img {
+            width: 22%;
+            border-radius: 10%;
+            margin: 1%;
+        }
+
+        .member {
+            margin: 50px 0;
+        }
+
+        .member li {
+            width: 150px;
+            list-style: none;
+            display: inline-block;
+            margin: 6px;
+        }
+
+        .member li img {
+            border-radius: 50%;
+        }
+
+        table em {
+            border: 1px solid #000;
+            font-style: normal;
+            font-size: 80%;
+            padding: 3px;
+            border-radius: 3px;
+            background: #fff;
+            color: #333;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- nav -->
+    <div id="top-nav" class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="nav-collapse collapse">
+                    <ul class="nav pull-right">
+                        <li><a href="http://piggyfly.dothome.co.kr" target="_blank">piggyfly</a></li>
+                        <li><a href="https://piggyfly.tistory.com/" target="_blank">tistory</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //nav -->
+
+    <!-- header -->
+    <div id="header">
+        <div class="container">
+            <div class="row">
+                <div class="span12" style="text-align:center;">
+                    <div class="header_tit">
+                        <h1>Professional web publishers</h1>
+                        <h2><a href="http://piggyfly.dothome.co.kr/">piggyfly</a></h2>
+                    </div>
+                    <div class="header_icon" id="wow">
+                        <ul>
+                            <li class="icon_tit1"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+                            <li class="icon_tit2"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+                            <li class="icon_tit3"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+                            <li class="icon_tit4"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //header -->
+
+    <!-- contents -->
+    <div class="container" style="margin-top:20px;">
+        <div class="row-fluid">
+            <div class="span12">
+                <h1>GRID SYSTEME</h1>
+
+                <h2>그리드 시스템</h2>
+                <div class="well">그리드 시스템은 선이나 면에 이미지를 텍스트에 맞춰 설계하는 디자인 방법론 입니다.</div>
+                <ul>
+                    <li>그리드 시스템은 페이지를 구성하는 정보를 의미있고 논리적으로 일관성있게 구성하는 것을 중요시 하는 그래픽 디자이너에게
+                        도움을 주는 정밀한 프레인워크입니다.</li>
+                    <li>디자인 구성 요소들을 조화롭게 융합하고 질서를 부여하는 하나의 수단으로, 주어진 정보를 빠르게 쉽게 읽을 수 있도록 할 뿐 만 아니라,
+                        본문, 제목 이미지등 정교한 시각적 체계를 가질 수 있도록 도와줍니다.</li>
+                    <li>960grid 사이트 &gt; <a href="https://960.gs">클릭</a></li>
+                    <br><br>
+                    <img src="img/grid01.JPG" alt="그리드이미지 01">
+                    <br><br>
+                    <img src="img/grid02.JPG" alt="그리드이미지 02">
+                    <br><br>
+                    <img src="img/grid03.JPG" alt="그리드이미지 03">
+                    <br><br>
+                    <img src="img/grid04.JPG" alt="그리드이미지 04">                                        
+                </ul>
+                <br>
+                <h3> 960 Grid System</h3>
+                <br><br>
+                <img src="img/grid05.JPG" alt="그리드이미지 05" width="950px">
+                <br><br>
+                <img src="img/grid06.png" alt="그리드이미지 06">
+                <br><br>
+                <img src="img/grid07.jpg" alt="그리드이미지 07">
+              
+                <div class="well">
+                    960픽셀 = (60픽셀 + 20픽셀) * 12 <br>
+                    컨테이너 = (컬럼가로 + 커터가로) * 컬럼개수 
+                </div>
+                <div class="well">
+                    컬럼의 폭 = {문저 전체 폭 - (커터 * 12)} / 컬럼 개수 <br>
+                    60픽셀 = {960픽셀 - (20픽셀 * 12)} / 12 <br>
+                             = {1100픽셀}
+                    80픽셀 = {1280픽셀 - (80픽셀 * 11) +56 / 12}
+                          = {768픽셀}
+                          = {600픽셀}
+                          = {360픽셀}
+                          = {720픽셀}
+                </div>
+
+            </div>
+            <!--//span12-->
+        </div>
+        <!--//row-fluid-->
+    </div>
+    <!-- //contents -->
+
+    <!-- //footer -->
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <h5>piggyfly</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //footer -->
+    <!-- script -->
+    <script src="../assets/js/jquery-1.9.1.min.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/google-code-prettify/prettify.js"></script>
+    <script src="../assets/js/application.js"></script>
+    <script src="../assets/js/prism.js"></script>
+</body>
+
+</html>

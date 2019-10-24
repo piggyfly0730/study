@@ -1,0 +1,609 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="webstoryboy">
+		<meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+		<meta name="keywords" content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webstoryboy, publisher, html5, html4, css3, html, markup, design">
+		<title>CSS</title>
+
+		<!-- web_font -->
+		<link href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css' rel='stylesheet' type='text/css' />
+
+		<!-- css -->
+		<link href="../assets/css/bootstrapTheme.css" rel="stylesheet">
+		<link href="../assets/css/custom.css" rel="stylesheet">
+        <link href="../assets/css/style.css" rel="stylesheet">
+        <link href="../assets/css/prism.css" rel="stylesheet">
+
+		<!-- Prettify -->
+		<link href="../assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+		<!-- Icon -->
+		<link rel="shortcut icon" href="../assets/ico/favicon.ico">
+		<link rel="apple-touch-icon" href="../assets/ico/icon_57.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="../assets/ico/icon_114.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="../assets/ico/icon_72.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="../assets/ico/icon_144.png">
+
+		<!-- hmlt5 support -->
+		<!--[if lt IE 9]><script src="../assets/js/html5shiv.js"></script><![endif]-->
+
+		<!-- IE6,7 support -->
+		<!--[if lte IE 7]><link rel="stylesheet" href="comm/css/ie7.css" type="text/css" ><![endif]-->
+		<!--[if IE 8]><link rel="stylesheet" href="comm/css/ie8.css" type="text/css" ><![endif]-->
+
+		<!--[if lte IE 6]>
+		<p style="font-size: 12px; color: #fff; background: #2885b0; padding:5px 0; margin: 0; text-align: center">
+			사용하고 계신 브라우저는 최신 웹 브라우저가 아닙니다. 업그레이드를 하거나 다른 최신 브라우저 사용을 권장합니다.
+			<a href="http://www.microsoft.com/korea/ie" target="_blank" >업그레이드,</a>
+			<a href="http://www.mozilla.or.kr/ko/" target="_blank">파이어폭스,</a>
+			<a href="http://kr.opera.com/download/" target="_blank">오페라,</a>,
+			<a href="http://support.apple.com/kb/DL1531?viewlocale=ko_KR&locale=ko_KR" target="_blank">사파리,</a>
+			<a href="http://www.google.com/chrome?hl=ko" target="_blank">크롬</a></p>
+			<![endif]-->
+			<style>
+			.face {display:block; margin:20px auto; width:400px; }
+			.face img {width:400px; border-radius:50%; }
+			.face1 img {width:22%; border-radius:10%; margin:1%;}
+			.member {margin:50px 0;}
+			.member li {width:150px; list-style:none; display:inline-block; margin:6px; }
+			.member li img { border-radius:50%;}
+                table em {border: 1px solid #000; font-style: normal; font-size: 80%; padding: 3px; border-radius: 3px; background:#fff; color: #333;}
+			</style>
+		</head>
+		<body>
+			<!-- nav -->
+			<div id="top-nav" class="navbar navbar-fixed-top">
+				<div class="navbar-inner">
+					<div class="container">
+						<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</button>
+						<div class="nav-collapse collapse">
+							<ul class="nav pull-right">
+                                <li><a href="http://piggyfly.dothome.co.kr" target="_blank">piggyfly</a></li>
+                                <li><a href="https://piggyfly.tistory.com/" target="_blank">tistory</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //nav -->
+
+			<!-- header -->
+			<div id="header">
+				<div class="container">
+					<div class="row">
+						<div class="span12" style="text-align:center;">
+							<div class="header_tit">
+								<h1>Professional web publishers</h1>
+								<h2><a href="http://webstoryboy.co.kr">webstoryboy.co.kr</a></h2>
+							</div>
+							<div class="header_icon" id="wow">
+								<ul>
+									<li class="icon_tit1"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+									<li class="icon_tit2"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+									<li class="icon_tit3"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+									<li class="icon_tit4"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //header -->
+
+			<!-- contents -->
+			<div class="container" style="margin-top:20px;">
+				<div class="row-fluid">
+					<div class="span12">
+						<h1>border-radius</h1>
+                        
+                        <div class="well">
+                            border-radius : [border-top-left-radius] [border-top-right-radius]
+                            [border-bottom-right-radius] [border-bottom-left-radius]
+                        </div>
+                        
+                        <!--
+                        .well.clearfix>.block.bor1*10>.border$${border$$}
+                        .well.clearfix>.block.bor2*10>.border$$@11{border$$@11}
+                        .well.clearfix>.block.bor3*10>.border$$@21{border$$@21}
+                        .well.clearfix>.block.bor4*10>.border$$@31{border$$@31}
+                        .well.clearfix>.block.bor5*10>.border$$@41{border$$@41}
+                        .well.clearfix>.block.bor6*10>.border$$@51{border$$@51}
+                        .well.clearfix>.block.bor7*10>.border$$@61{border$$@61}
+                        -->
+                        <style>
+                            .block {width: 140px; height: 140px; margin: 40px;
+                            text-align: center; line-height: 140px; color: #fff;
+                            float: left;}
+                            .block > div {transition: all 0.3s ease-in-out;}
+                            .block > div:hover {border-radius: 0;}
+                            .bor1 > div {background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);}
+                            .bor2 > div {background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);}
+                            .bor3 > div {background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);}
+                            .bor4 > div {background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);}
+                            .bor5 > div {background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);}
+                            .bor6 > div {background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);}
+                            .bor7 > div {background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);}
+                        </style>
+
+
+                        <style>
+                            .border01 {border-radius: 0;}
+                            .border02 {border-radius: 5px;}
+                            .border03 {border-radius: 10px;}
+                            .border04 {border-radius: 15px;}
+                            .border05 {border-radius: 20px;}
+                            .border06 {border-radius: 25px;}
+                            .border07 {border-radius: 30px;}
+                            .border08 {border-radius: 35px;}
+                            .border09 {border-radius: 50px;}
+                            .border10 {border-radius: 70px; animation: border10 1s infinite ease;}
+                            @keyframes border10 {
+                                0% {border-radius: 70px;}
+                                50% {border-radius: 0px;}
+                                100% {border-radius: 70px;}
+                            }
+                        </style>
+                        <h3>border-radius</h3>
+                        <div class="well clearfix">
+                            <div class="block bor1">
+                                <div class="border01">border01</div>
+                            </div>
+                            <div class="block bor1">
+                                <div class="border02">border02</div>
+                            </div>
+                            <div class="block bor1">
+                                <div class="border03">border03</div>
+                            </div>
+                            <div class="block bor1">
+                                <div class="border04">border04</div>
+                            </div>
+                            <div class="block bor1">
+                                <div class="border05">border05</div>
+                            </div>
+                            <div class="block bor1">
+                                <div class="border06">border06</div>
+                            </div>
+                            <div class="block bor1">
+                                <div class="border07">border07</div>
+                            </div>
+                            <div class="block bor1">
+                                <div class="border08">border08</div>
+                            </div>
+                            <div class="block bor1">
+                                <div class="border09">border09</div>
+                            </div>
+                            <div class="block bor1">
+                                <div class="border10">border10</div>
+                            </div>
+                        </div>
+<pre><code class="language-css line-numbers">.border01 {border-radius: 0;}
+.border02 {border-radius: 5px;}
+.border03 {border-radius: 10px;}
+.border04 {border-radius: 15px;}
+.border05 {border-radius: 20px;}
+.border06 {border-radius: 25px;}
+.border07 {border-radius: 30px;}
+.border08 {border-radius: 35px;}
+.border09 {border-radius: 50px;}
+.border10 {border-radius: 70px;}
+</code></pre>
+                        
+
+                        <style>
+                            .border11 {border-radius: 0px 0px;}
+                            .border12 {border-radius: 15px 0px;}
+                            .border13 {border-radius: 30px 0px;}
+                            .border14 {border-radius: 45px 0px;}
+                            .border15 {border-radius: 60px 0px;}
+                            .border16 {border-radius: 75px 0px;}
+                            .border17 {border-radius: 90px 0px;}
+                            .border18 {border-radius: 105px 0px;}
+                            .border19 {border-radius: 120px 0px;}
+                            .border20 {border-radius: 135px 0px; animation: border20 1s infinite ease-in-out;}
+                            @keyframes border20 {
+                                0% {border-radius: 135px 0px;}
+                                50% {border-radius: 0px 0px;}
+                                100% {border-radius: 135px 0px;}
+                            }
+                        </style>
+                        <h3>border-radius</h3>
+                        <div class="well clearfix">
+                            <div class="block bor2">
+                                <div class="border11">border11</div>
+                            </div>
+                            <div class="block bor2">
+                                <div class="border12">border12</div>
+                            </div>
+                            <div class="block bor2">
+                                <div class="border13">border13</div>
+                            </div>
+                            <div class="block bor2">
+                                <div class="border14">border14</div>
+                            </div>
+                            <div class="block bor2">
+                                <div class="border15">border15</div>
+                            </div>
+                            <div class="block bor2">
+                                <div class="border16">border16</div>
+                            </div>
+                            <div class="block bor2">
+                                <div class="border17">border17</div>
+                            </div>
+                            <div class="block bor2">
+                                <div class="border18">border18</div>
+                            </div>
+                            <div class="block bor2">
+                                <div class="border19">border19</div>
+                            </div>
+                            <div class="block bor2">
+                                <div class="border20">border20</div>
+                            </div>
+                        </div>
+<pre><code class="language-css line-numbers">.border11 {border-radius: 0px 0px;}
+.border12 {border-radius: 15px 0px;}
+.border13 {border-radius: 30px 0px;}
+.border14 {border-radius: 45px 0px;}
+.border15 {border-radius: 60px 0px;}
+.border16 {border-radius: 75px 0px;}
+.border17 {border-radius: 90px 0px;}
+.border18 {border-radius: 105px 0px;}
+.border19 {border-radius: 120px 0px;}
+.border20 {border-radius: 135px 0px;}
+</code></pre></code>
+
+
+
+                        <style>
+                            .border21 {border-radius: 10px / 55px;}
+                            .border22 {border-radius: 20px / 55px;}
+                            .border23 {border-radius: 30px / 55px;}
+                            .border24 {border-radius: 40px / 55px;}
+                            .border25 {border-radius: 50px / 55px;}
+                            .border26 {border-radius: 55px / 50px;}
+                            .border27 {border-radius: 55px / 40px;}
+                            .border28 {border-radius: 55px / 30px;}
+                            .border29 {border-radius: 55px / 20px;}
+                            .border30 {border-radius: 55px / 10px;}
+                        </style>
+                        <h3>border-radius</h3>
+                        <div class="well clearfix">
+                            <div class="block bor3">
+                                <div class="border21">border21</div>
+                            </div>
+                            <div class="block bor3">
+                                <div class="border22">border22</div>
+                            </div>
+                            <div class="block bor3">
+                                <div class="border23">border23</div>
+                            </div>
+                            <div class="block bor3">
+                                <div class="border24">border24</div>
+                            </div>
+                            <div class="block bor3">
+                                <div class="border25">border25</div>
+                            </div>
+                            <div class="block bor3">
+                                <div class="border26">border26</div>
+                            </div>
+                            <div class="block bor3">
+                                <div class="border27">border27</div>
+                            </div>
+                            <div class="block bor3">
+                                <div class="border28">border28</div>
+                            </div>
+                            <div class="block bor3">
+                                <div class="border29">border29</div>
+                            </div>
+                            <div class="block bor3">
+                                <div class="border30">border30</div>
+                            </div>
+                        </div>
+<pre><code class="language-css line-numbers">.border21 {border-radius: 10px / 55px;}
+.border22 {border-radius: 20px / 55px;}
+.border23 {border-radius: 30px / 55px;}
+.border24 {border-radius: 40px / 55px;}
+.border25 {border-radius: 50px / 55px;}
+.border26 {border-radius: 55px / 50px;}
+.border27 {border-radius: 55px / 40px;}
+.border28 {border-radius: 55px / 30px;}
+.border29 {border-radius: 55px / 20px;}
+.border30 {border-radius: 55px / 10px;}
+</code></pre></code>
+
+
+                        <style>
+                            .border31 {border-radius: 0 30px 30px / 30px}
+                            .border32 {border-radius: 0 40px 40px / 40px}
+                            .border33 {border-radius: 0 50px 50px / 50px}
+                            .border34 {border-radius: 0 60px 60px / 60px}
+                            .border35 {border-radius: 0 70px 70px / 70px}
+                            .border36 {border-radius: 30px 30px 0px / 30px}
+                            .border37 {border-radius: 40px 40px 0px / 40px}
+                            .border38 {border-radius: 50px 50px 0px / 50px}
+                            .border39 {border-radius: 60px 60px 0px / 60px}
+                            .border40 {border-radius: 70px 70px 0px / 70px}
+                        </style>
+
+                        <h3>border-radius</h3>
+                        <div class="well clearfix">
+                            <div class="block bor4">
+                                <div class="border31">border31</div>
+                            </div>
+                            <div class="block bor4">
+                                <div class="border32">border32</div>
+                            </div>
+                            <div class="block bor4">
+                                <div class="border33">border33</div>
+                            </div>
+                            <div class="block bor4">
+                                <div class="border34">border34</div>
+                            </div>
+                            <div class="block bor4">
+                                <div class="border35">border35</div>
+                            </div>
+                            <div class="block bor4">
+                                <div class="border36">border36</div>
+                            </div>
+                            <div class="block bor4">
+                                <div class="border37">border37</div>
+                            </div>
+                            <div class="block bor4">
+                                <div class="border38">border38</div>
+                            </div>
+                            <div class="block bor4">
+                                <div class="border39">border39</div>
+                            </div>
+                            <div class="block bor4">
+                                <div class="border40">border40</div>
+                            </div>
+                        </div>
+<pre><code class="language-css line-numbers">.border31 {border-radius: 0 30px 30px / 30px}
+.border32 {border-radius: 0 40px 40px / 40px}
+.border33 {border-radius: 0 50px 50px / 50px}
+.border34 {border-radius: 0 60px 60px / 60px}
+.border35 {border-radius: 0 70px 70px / 70px}
+.border36 {border-radius: 30px 30px 0px / 30px}
+.border37 {border-radius: 40px 40px 0px / 40px}
+.border38 {border-radius: 50px 50px 0px / 50px}
+.border39 {border-radius: 60px 60px 0px / 60px}
+.border40 {border-radius: 70px 70px 0px / 70px}
+</code></pre></code>
+
+
+                        <style>
+                            .border41 {border-radius: 0px 0px 30px 30px / 0px 0px 30px 30px;}
+                            .border42 {border-radius: 0px 0px 40px 40px / 0px 0px 40px 40px;}
+                            .border43 {border-radius: 0px 0px 50px 50px / 0px 0px 50px 50px;}
+                            .border44 {border-radius: 0px 0px 60px 60px / 0px 0px 60px 60px;}
+                            .border45 {border-radius: 0px 0px 70px 70px / 0px 0px 70px 70px; animation: border45 1s infinite ease-in;}
+                            .border46 {border-radius: 30px 30px 0px 0px / 30px 30px 0px 0px;}
+                            .border47 {border-radius: 40px 40px 0px 0px / 40px 40px 0px 0px;}
+                            .border48 {border-radius: 50px 50px 0px 0px / 50px 50px 0px 0px;}
+                            .border49 {border-radius: 60px 60px 0px 0px / 60px 60px 0px 0px;}
+                            .border50 {border-radius: 70px 70px 0px 0px / 70px 70px 0px 0px; animation: border50 1s infinite ease-in;}
+
+                            @keyframes border45 {
+                                0% {border-radius: 0px 0px 70px 70px / 0px 0px 70px 70px;}
+                                50% {border-radius: 0px 0px 0px 0px / 0px 0px 0px 0px;}
+                                100% {border-radius: 0px 0px 70px 70px / 0px 0px 70px 70px;}
+                            }
+                            @keyframes border50 {
+                                0% {border-radius: 70px 70px 0px 0px / 70px 70px 0px 0px;}
+                                50% {border-radius: 0px 0px 0px 0px / 0px 0px 0px 0px;}
+                                100% {border-radius: 70px 70px 0px 0px / 70px 70px 0px 0px;}
+                            }
+                        </style>
+
+
+                        <h3>border-radius</h3>
+                        <div class="well clearfix">
+                            <div class="block bor5">
+                                <div class="border41">border41</div>
+                            </div>
+                            <div class="block bor5">
+                                <div class="border42">border42</div>
+                            </div>
+                            <div class="block bor5">
+                                <div class="border43">border43</div>
+                            </div>
+                            <div class="block bor5">
+                                <div class="border44">border44</div>
+                            </div>
+                            <div class="block bor5">
+                                <div class="border45">border45</div>
+                            </div>
+                            <div class="block bor5">
+                                <div class="border46">border46</div>
+                            </div>
+                            <div class="block bor5">
+                                <div class="border47">border47</div>
+                            </div>
+                            <div class="block bor5">
+                                <div class="border48">border48</div>
+                            </div>
+                            <div class="block bor5">
+                                <div class="border49">border49</div>
+                            </div>
+                            <div class="block bor5">
+                                <div class="border50">border50</div>
+                            </div>
+                        </div>
+<pre><code class="language-css line-numbers">.border41 {border-radius: 0px 0px 30px 30px / 0px 0px 30px 30px;}
+.border42 {border-radius: 0px 0px 40px 40px / 0px 0px 40px 40px;}
+.border43 {border-radius: 0px 0px 50px 50px / 0px 0px 50px 50px;}
+.border44 {border-radius: 0px 0px 60px 60px / 0px 0px 60px 60px;}
+.border45 {border-radius: 0px 0px 70px 70px / 0px 0px 70px 70px;}
+.border46 {border-radius: 30px 30px 0px 0px / 30px 30px 0px 0px;}
+.border47 {border-radius: 40px 40px 0px 0px / 40px 40px 0px 0px;}
+.border48 {border-radius: 50px 50px 0px 0px / 50px 50px 0px 0px;}
+.border49 {border-radius: 60px 60px 0px 0px / 60px 60px 0px 0px;}
+.border50 {border-radius: 70px 70px 0px 0px / 70px 70px 0px 0px;}
+</code></pre></code>
+
+
+                        <style>
+                            .border51 {border-radius: 0px 0px 0px 10px;}
+                            .border52 {border-radius: 0px 0px 0px 20px;}
+                            .border53 {border-radius: 0px 0px 0px 30px;}
+                            .border54 {border-radius: 0px 0px 0px 40px;}
+                            .border55 {border-radius: 0px 0px 0px 50px;}
+                            .border56 {border-radius: 0px 0px 0px 60px;}
+                            .border57 {border-radius: 0px 0px 0px 70px;}
+                            .border58 {border-radius: 0px 0px 0px 80px;}
+                            .border59 {border-radius: 0px 0px 0px 90px;}
+                            .border60 {border-radius: 0px 0px 0px 100px;}
+                        </style>
+                        <h3>border-radius</h3>
+                        <div class="well clearfix">
+                            <div class="block bor6">
+                                <div class="border51">border51</div>
+                            </div>
+                            <div class="block bor6">
+                                <div class="border52">border52</div>
+                            </div>
+                            <div class="block bor6">
+                                <div class="border53">border53</div>
+                            </div>
+                            <div class="block bor6">
+                                <div class="border54">border54</div>
+                            </div>
+                            <div class="block bor6">
+                                <div class="border55">border55</div>
+                            </div>
+                            <div class="block bor6">
+                                <div class="border56">border56</div>
+                            </div>
+                            <div class="block bor6">
+                                <div class="border57">border57</div>
+                            </div>
+                            <div class="block bor6">
+                                <div class="border58">border58</div>
+                            </div>
+                            <div class="block bor6">
+                                <div class="border59">border59</div>
+                            </div>
+                            <div class="block bor6">
+                                <div class="border60">border60</div>
+                            </div>
+                        </div>
+<pre><code class="language-css line-numbers">.border51 {border-radius: 0px 0px 0px 10px;}
+.border52 {border-radius: 0px 0px 0px 20px;}
+.border53 {border-radius: 0px 0px 0px 30px;}
+.border54 {border-radius: 0px 0px 0px 40px;}
+.border55 {border-radius: 0px 0px 0px 50px;}
+.border56 {border-radius: 0px 0px 0px 60px;}
+.border57 {border-radius: 0px 0px 0px 70px;}
+.border58 {border-radius: 0px 0px 0px 80px;}
+.border59 {border-radius: 0px 0px 0px 90px;}
+.border60 {border-radius: 0px 0px 0px 100px;}
+</code></pre>
+
+
+                        <style>
+                            .border61 {border-radius: 50% 70% 55% 65% / 50% 45% 60% 45%;}
+                            .border62 {border-radius: 40% 40% 55% 65% / 30% 45% 60% 75%;}
+                            .border63 {border-radius: 55% 50% 55% 65% / 50% 55% 60% 45%;}
+                            .border64 {border-radius: 57% 60% 35% 75% / 60% 75% 60% 75%;}
+                            .border65 {border-radius: 55% 70% 45% 65% / 80% 45% 70% 45%;}
+                            .border66 {border-radius: 30% 50% 75% 55% / 40% 45% 50% 55%;}
+                            .border67 {border-radius: 56% 60% 25% 65% / 50% 45% 80% 45%;}
+                            .border68 {border-radius: 80% 70% 45% 45% / 30% 45% 60% 85%;}
+                            .border69 {border-radius: 45% 40% 35% 75% / 60% 45% 90% 45%;}
+                            .border70 {border-radius: 56% 50% 35% 85% / 40% 45% 60% 85%;}
+                        </style>
+                        <h3>border-radius</h3>
+                        <div class="well clearfix">
+                            <div class="block bor7">
+                                <div class="border61">border61</div>
+                            </div>
+                            <div class="block bor7">
+                                <div class="border62">border62</div>
+                            </div>
+                            <div class="block bor7">
+                                <div class="border63">border63</div>
+                            </div>
+                            <div class="block bor7">
+                                <div class="border64">border64</div>
+                            </div>
+                            <div class="block bor7">
+                                <div class="border65">border65</div>
+                            </div>
+                            <div class="block bor7">
+                                <div class="border66">border66</div>
+                            </div>
+                            <div class="block bor7">
+                                <div class="border67">border67</div>
+                            </div>
+                            <div class="block bor7">
+                                <div class="border68">border68</div>
+                            </div>
+                            <div class="block bor7">
+                                <div class="border69">border69</div>
+                            </div>
+                            <div class="block bor7">
+                                <div class="border70">border70</div>
+                            </div>
+                        </div>
+<pre><code class="language-css line-numbers">.border61 {border-radius: 50% 70% 55% 65% / 50% 45% 60% 45%;}
+.border62 {border-radius: 40% 40% 55% 65% / 30% 45% 60% 75%;}
+.border63 {border-radius: 55% 50% 55% 65% / 50% 55% 60% 45%;}
+.border64 {border-radius: 57% 60% 35% 75% / 60% 75% 60% 75%;}
+.border65 {border-radius: 55% 70% 45% 65% / 80% 45% 70% 45%;}
+.border66 {border-radius: 30% 50% 75% 55% / 40% 45% 50% 55%;}
+.border67 {border-radius: 56% 60% 25% 65% / 50% 45% 80% 45%;}
+.border68 {border-radius: 80% 70% 45% 45% / 30% 45% 60% 85%;}
+.border69 {border-radius: 45% 40% 35% 75% / 60% 45% 90% 45%;}
+.border70 {border-radius: 56% 50% 35% 85% / 40% 45% 60% 85%;}
+</code></pre>
+                   
+
+                        <h3>border-radius</h3>
+                        <p class="codepen" data-height="500" data-theme-id="37239" data-default-tab="result" data-user="giaco" data-slug-hash="QZQQJX" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Border radius">
+                        <span>See the Pen <a href="https://codepen.io/giaco/pen/QZQQJX/">
+                        Border radius</a> by Pogany (<a href="https://codepen.io/giaco">@giaco</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                        
+                        <br>
+                        <p class="codepen" data-height="500" data-theme-id="37239" data-default-tab="result" data-user="laviperchik" data-slug-hash="mAHwE" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="border-radius learning tool">
+                        <span>See the Pen <a href="https://codepen.io/laviperchik/pen/mAHwE/">
+                        border-radius learning tool</a> by Lavi Perchik (<a href="https://codepen.io/laviperchik">@laviperchik</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>
+					<!--//span12-->
+				</div>
+				<!--//row-fluid-->
+			</div>
+			<!-- //contents -->
+
+			<!-- //footer -->
+			<div id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="span12">
+							<h5>Webstoryboy</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //footer -->
+			<!-- script -->
+			<script src="../assets/js/jquery-1.9.1.min.js"></script>
+			<script src="../assets/js/bootstrap-collapse.js"></script>
+			<script src="../assets/js/bootstrap-transition.js"></script>
+			<script src="../assets/js/google-code-prettify/prettify.js"></script>
+            <script src="../assets/js/application.js"></script>
+            <script src="../assets/js/prism.js"></script>
+		</body>
+	</html>

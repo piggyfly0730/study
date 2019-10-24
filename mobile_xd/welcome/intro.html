@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	 <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+	<title>intro</title>
+
+	<link rel="stylesheet" href="css/swiper.css">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<style>
+		*{margin: 0; padding:0;}
+		.container {width: 800px; margin: 0 auto;}
+		.swiper-container {width: 100%; padding-bottom: 50px;}
+		.swiper-container img {width: 100%;}
+		.swiper-pagination-bullet-active {background: #000;}
+		.swiper-button-prev {
+			top: auto; left: auto; bottom: 20px;right: 80px;
+			background: #928888 url(img/btn_left.png) no-repeat center center;
+			width: 54px;	 height: 54px;	border-radius: 50%;	}
+
+		.swiper-button-next {
+			top: auto; bottom: 20px;right: 20px;	
+			background: #3c2571 url(img/btn_right.png) no-repeat center center;
+			width: 54px;	 height: 54px;	border-radius: 50%;	}
+
+		 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+			only screen and (min-device-pixel-ratio: 1.5),
+			only screen and (min-resolution: 1.5dppx){
+		   .swiper-button-prev {
+				background: #928888 url(img/btn_left@2x.png) no-repeat center center;
+				background-size: 20px;
+			}
+			.swiper-button-next {
+				background: #3c2571 url(img/btn_right@2x.png) no-repeat center center;
+				background-size: 20px;
+			}
+		}
+		@media only screen and (-webkit-min-device-pixel-ratio: 2.5),
+			only screen and (min-device-pixel-ratio: 2.5),
+			only screen and (min-resolution: 2.5dppx){
+		    .swiper-button-prev {
+				background: #928888 url(img/btn_left@3x.png) no-repeat center center;
+				background-size: 20px;
+			}
+			.swiper-button-next {
+				background: #3c2571 url(img/btn_right@3x.png) no-repeat center center;
+				background-size: 20px;
+			}
+		}
+
+
+		.contents h2{font-size: 26px; color:#000;}
+		.contents p {font-size: 14px; color:#333; }
+		.row {padding: 0 10px;}
+
+		@media (max-width: 800px;){
+			.container {width: 100%;}
+		}
+	</style>
+
+
+	<!-- 폰트 -->
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<!-- <section id="contents">
+		<figure>
+			<img src="img/mobile01.png"
+   			  		srcset="img/mobile01@2x.png 2x,
+            				   img/mobile01@3x.png 3x">
+		</figure>
+	</section>
+	<h2>Welcome Planet</h2>
+	<p>This is JungYoon's planet ,I ayways <br>welcome your visit</p>
+	<div id="btn">
+		<div></div>
+		<div></div>
+	</div> -->
+
+<!-- Slider main container -->
+
+<section class="gallery">
+	<div class="contents">
+		<div class="row">
+			<!-- slider -->
+			<div class="swiper-container">
+			    <div class="swiper-wrapper">
+			        <div class="swiper-slide">
+			        	<img src="img/mobile01.png" srcset="img/mobile01@2x.png 2x, lmg/mobile01@3x.png 3x">
+					</div>
+					<div class="swiper-slide">
+			        	<img src="img/mobile01.png" srcset="img/mobile01@2x.png 2x, lmg/mobile01@3x.png 3x">
+					</div>
+					<div class="swiper-slide">
+			        	<img src="img/mobile01.png" srcset="img/mobile01@2x.png 2x, lmg/mobile01@3x.png 3x">
+					</div>
+					<div class="swiper-slide">
+			        	<img src="img/mobile01.png" srcset="img/mobile01@2x.png 2x, lmg/mobile01@3x.png 3x">
+					</div>
+				</div>
+			    <div class="swiper-pagination"></div>
+			    
+			</div>
+
+			<!-- //slider -->
+		</div>
+	</div>
+</section>
+<section class="contents">
+	<div class="container">
+		<div class="row">
+			<h2>Welcome Planet</h2>
+			<p>This is JungYoon's planet, I ayways <br>welcome your visit</p>
+			<div class="swiper-button-prev"></div>
+		    <div class="swiper-button-next"></div>
+		</div>
+	</div>
+</section>
+
+<script src="js/swiper.min.js"></script>
+  <script>
+  var mySwiper = new Swiper ('.swiper-container', {
+    direction: 'horizontal',
+    loop: true,
+    spaceBetween : 30,
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  })
+  </script>
+</body>
+</html>

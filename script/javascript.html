@@ -1,0 +1,1513 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="description" content="A Documentation by JavaScript.">
+	<meta name="author" content="webstoryboy">
+
+	<title>JavaScript Reference</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="assets/css/bootstrap.css" rel="stylesheet">
+
+	<!-- Documentation extras -->
+	<link href="assets/css/docs.min.css" rel="stylesheet">
+	<link href="assets/css/prism.css" rel="stylesheet">
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.assets/js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="shortcut icon" href="ico/favicon.ico">
+
+	<!-- web font -->
+	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&display=swap&subset=korean" rel="stylesheet">
+
+	<style>
+		ul,ol {margin-left: -25px;}
+        .nav {margin-left: auto;}
+        h4 {margin-top: 30px;}
+	</style>
+</head>
+
+<body>
+	<a class="sr-only" href="#content">Skip to main content</a>
+
+	<header class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="index.html" class="navbar-brand">webstoryboy &lt;/doc&gt;</a>
+			</div>
+			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+				<ul class="nav navbar-nav">
+					<li><a href="jquery.html">jQuery</a></li>
+					<li><a href="javascript.html">JavaScript</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div class="bs-header" style="background-image: linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);" id="content">
+		<div class="container">
+			<h1>JavaScript Reference v1.0 &lt;/doc&gt;</h1>
+			<p><a href="https://webstoryboy.co.kr/" target="_blank">webstoryboy.co.kr</a></p>
+		</div>
+	</div>
+
+	<div class="container bs-docs-container">
+		<div class="row">
+			
+			<div class="col-md-9" role="main">
+				<!-- Introduction --
+				<div class="bs-docs-section">
+					<h2 id="intro1" class="page-header">자바스크립트</h2>
+					<p class="lead">자바스크립트는 웹 브라우저에서 동작되는 스크립트 언어입니다.</p>
+					<p>자바스크립트(JavaScript)는 객체 기반의 스크립트 프로그래밍 언어이다. 이 언어는 웹 브라우저 내에서 주로 사용하며, 다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. 또한 Node.js와 같은 런타임 환경과 같이 서버 사이드 네트워크 프로그래밍에도 사용되고 있다. 자바스크립트는 본래 넷스케이프 커뮤니케이션즈 코퍼레이션의 브렌던 아이크(Brendan Eich)가 처음에는 모카(Mocha)라는 이름으로, 나중에는 라이브스크립트(LiveScript)라는 이름으로 개발하였으며, 최종적으로 자바스크립트가 되었다. 자바스크립트가 썬 마이크로시스템즈의 자바와 구문이 유사한 점도 있지만, 이는 사실 두 언어 모두 C 언어의 기본 구문에 바탕을 뒀기 때문이고, 자바와 자바스크립트는 직접적인 관련성이 없다. 이름과 구문 외에는 자바보다 셀프나 스킴과 유사성이 많다.
+
+					2013년 1월 기준으로, 가장 최근 버전은 자바스크립트 1.8.5이고[3], 파이어폭스 3에서 지원된다. 표준 ECMA-262 3판에 대응하는 자바스크립트 버전은 1.5이다. ECMA스크립트는 쉽게 말해 자바스크립트의 표준화된 버전이다. 모질라 1.8 베타 1이 나오면서 XML에 대응하는 확장 언어인 E4X(ECMA-357)를 부분 지원하게 되었다. 자바스크립트는 브라우저마다 지원되는 버전이 다르다.(출처:위키백과)</p>
+
+					<h3 id="intro1_1" class="page-header">자바스크립트 언어의 특징</h3>
+					<h4>자바스크립트는 인터프린터 언어입니다.</h4>
+					<p>자바스크립트 코드는 작성된 순서대로 구문을 분석합니다. 만약 코드에 문제가 생기면 에러가 발생한 다음 줄 부터는 구문을 분석하지 않습니다.</p>
+
+					<h4>자바스크립트는 클라이언트 스크립트 언어입니다.</h4>
+					<p>자바스크립트는 서버에서 실행되지 않고, 사용자 컴퓨터에서 실행되는 클라이언트 언어입니다. 서버에서 운영되는 PHP, JSP, ASP언어와 비교됩니다.</p>
+
+					<h4>자바스크립트는 객체기반 언어입니다.</h4>
+					<p>C++와 JAVA와 같이 클래스를 이용하여 객체를 생성하는 클래스 기반 객체 지향 언어입니다. 자바스크립트는 클래스가 아닌 프로토타입을 상속하는 프로토타입 기반 객체 지향 언어입니다.</p>
+
+					<h4>자바스크립트는 다양한 라이브러리가 지원되는 언어입니다.</h4>
+					<p>자바스크립트를 이용한 언어에는 제이쿼리(jQuery), 앵귤러(Angular)js, 리액트(React)js, 노드(Node)js 등이 있습니다. 이를 통해 다양한 기능을 쉽게 구현할 수 있으며, 뛰어난 효과를 만들어 낼 수 있습니다.</p>
+
+					<h4>자바스크립트는 동적 타입의 언어이며 클로저를 정의합니다.</h4>
+					<p>C++와 JAVA는 실행되기 전에 변수 타입을 정하는 언어이며, 자바스크립트는 변수 타입이 없는 동적 타입의 언어이며, 자바스크립트 함수는 클로저(Closure)를 정합니다.</p>
+
+					<h3 id="intro1_2" class="page-header">자바스크립트 기술적 요소</h3>
+					<h4>ECMAScript</h4>
+					<p>자바스크립트는 ECMA-262 문서로 공개되고 있으며 핵심기술은 ECMAScript로 규정되어 있습니다. ECMAScript는 ECMA(Ecma International)라는 조직이 표준화 작업을 하고 있으며, 현재 최신버전은 ECMAScript8입니다.</p>
+
+					<h4>클라이언트 언어 자바스크립트</h4>
+					<p>자바스크립트는 웹 브라우저에 작동되는 클라이언트 언어입니다. 자바스크립트는 ECMAScript가 규정한 코어 언어와 웹 브라우저로 구성되어 있습니다.</p>
+					<ul>
+						<li>Window 인터페이스 : 자바스크립는 브라우저를 조작하는 기능을 제공</li>
+						<li>DOM : 자바스크립트는 HTML 문서를 조작하는 기능을 제공</li>
+						<li>XMLHttpRequest : 자바스크립트는 서버와 비동기로 통신하는 기능</li>
+					</ul>
+
+					<h4>서버 언어 자바스크립트</h4>
+					<p>웹 서버에서 동작되는 자바스크립트를 서버 측 자바스크립트라고 합니다. 웹 서버를 구현 하는데 Perl, PHP, Python, Ruby 등의 프래그래밍 언어가 널리 사용되고 있으며, 최근에는 서버 측 언어로 자바스크립트를 많이 사용하고 있습니다.</p>
+					<ul>
+						<li>Node.js : 구글이 개발한 자바스크립트 실행 환경</li>
+						<li>Rhino : 모질라가 개발한 자바스크립트 실행 환경</li>
+						<li>Aptana Jaxer : 압타나가 개발한 자바스크립트 실행 환경</li>
+					</ul>
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro2" class="page-header">자바스크립트 기초</h2>
+					<h3 id="intro2-1" class="page-header">자바스크립트 주석</h3>
+					<p>자바스크립트 주석은 일반적으로 특정 코드에 대한 설명을 입력하거나 특정한 부분의 코드가 실행되지 않도록 사용합니다. 주석표시는 프로그램에 영향을 미치지 않습니다.</p>
+					<div class="panel panel-default">
+						<div class="panel-body">
+						/* .... */ : 여러 줄에 주석을 적용하는 경우<br>
+						//: 한 줄에 주석을 적용하는 경우
+						</div>
+					</div>
+
+					<h3 id="intro2-2" class="page-header">자바스크립트 대문자와 소문자</h3>
+					<p>자바스크립트는 대문자와 소문자를 구별합니다. console와 Console은 각각 다른 문자열로 처리됩니다.</p>
+					<div class="panel panel-default">
+						<div class="panel-body">
+						날짜 객체 생성 : New date();(X)<br>
+						날짜 객체 생성 : new Date();(O)
+						</div>
+					</div>
+
+					<h3 id="intro2-3" class="page-header">자바스크립트 토큰과 공백문자</h3>
+					<p>프로그램을 구성하는 최소 단위를 토큰(어휘)라고 합니다. 자바스크립트 언어는 프로그램을 실행하기 전에 토큰으로 분해합니다. 이러한 동작을 어휘 분석이라고 하며, 이러한 분석을 통해 올바른 프로그램인지 판단합니다. 이 동작을 구문 분석(파싱)이라고 합니다. 토큰은 공백을 넣지 않고 나열하기만 해서는 토큰을 판단 할 수 없습니다. 그래서 프로그래밍 언어에서는 토큰과 토큰 사이에 공백문자를 통해 구분합니다. 이때 토큰과 토큰 사이의 공백 문자를 여러개 입력해도 공백문자를 하나만 인식합니다.</p>
+
+					<h3 id="intro2-4" class="page-header">자바스크립트 문자열 처리<a href="javascript02.html"><button type="button" class="btn btn-default">view</button></a></h3>
+					<p>자바스크림트에서는 문자열을 구분하기 위해서는 작은 따옴표와 큰 따옴표를 사용합니다.</p>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;Javascript : 문자열 처리&lt;/title&gt;
+	&lt;script&gt;
+		var str1 = "javascript";			//큰 따옴표
+		var str2 = 'javascript';			//작은 따옴표
+		var str3 = "hello 'javascript'";	//큰 따옴표 안에 작은 따옴표
+		var str4 = 'hello "javascript"'; 	//작은 따옴표 안에 큰 따옴표
+		var str5 = "hello\njavascript";		//줄바꿈
+		var str6 = "hello\'javascript\'";	//작은 따옴표
+		var str7 = "hello\"javascript\"";	//큰 따옴표
+
+		document.write(str1);
+		document.write("&lt;br&gt;");
+		document.write(str2);
+		document.write("&lt;br&gt;");
+		document.write(str3);
+		document.write("&lt;br&gt;");
+		document.write(str4);
+		document.write("&lt;br&gt;");
+		alert(str5);
+		alert(str6);
+		alert(str7);
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+
+					<h3 id="intro2-5"class="page-header">자바스크립트 사용방법 <a href="javascript01.html"><button type="button" class="btn btn-default">view</button></a></h3>
+					<p>자바스크립트를 사용하는 방법은 외부파일, 스크립트 태그, 태그에 직접기술하는 방법이 있습니다.</p>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;Javascript&lt;/title&gt;
+	&lt;!-- 외부파일로 로드하는 방법 --&gt;
+	&lt;script type="text/Javascript" src="경로"&gt;&lt;/script&gt;
+
+	&lt;!-- script 태그 사이에 기술하는 방법 --&gt;
+	&lt;script&gt;
+		document.write("hello");
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;!-- 태그에 직적 기술하는 방법 --&gt;
+	&lt;input type="button" ondblclick="alert('hello')"&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+					
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro3" class="page-header">변수</h2>
+					<p class="lead">변수는 <strong>하나의 데이터</strong>를 저장하는 저장소입니다.</p>
+
+					<p>변수는 변하는 수를 의미하며, 사용 가능 범위에 따라 전역변수, 지역변수, 매게변수, 멤버변수로 나눌 수 있으며, 변수는 식별자로 구분해야 하기 때문에 
+					변수에는 숫자, 문자열, 불린, 함수, 객체 들을 사용할 수 있습니다. </p>
+
+					<h3 id="intro3-1" class="page-header">변수 선언</h3>
+					<div class="panel panel-default">
+						<div class="panel-heading">변수 사용하는 방법</div>
+						<div class="panel-body">
+							var 변수명 ;<br>
+							var 변수명 = 값;
+						</div>						
+					</div>
+					<h3 id="intro3-2" class="page-header">변수명</h3>
+						<div class="panel panel-default">
+						<div class="panel-body">
+						예약어 : 자바스크립트에서 정해진 단어 즉 자바스크립트 문법을 규정짓기 위해 자바스크립트에서 사용하는 특수 키워드 입니다.<br>
+						식별자 : 사용자가 임의로 사용하는 어 즉 변수나 함수를 사용할 때 정의하는 키워드 입니다.
+						</div>
+					</div>
+					<h4>식별자 만드는 규칙</h4>
+					<ul>
+						<li>사용자가 사용할 수 있는 문자 알파벳 (a~z, A~Z) , 숫자(0~9), 밑줄( _ ) , 달러기호 ( $ )</li>
+						<li>첫글자는 숫자를 사용할 수 없습니다. 첫글자  알파벳 (a~z, A~Z) , 숫자(0~9), 밑줄( _ ) , 달러기호 ( $ ) 중 하나여야 합니다, </li>
+						<li>공백을 주면 안됨 : 밑줄( _ ) 사용가능, 하이픈( - ) 사용안됨</li>
+						<li>특수 기호를 사용할 수 없습니다.</li>
+						<li>키워즈(예약어)를 사용 할 수 없습니다.</li>
+					</ul>
+					<h4>단어를 조합할 때 규칙</h4>
+					<ul>
+						<li>언더스코어 노테이션(스네이크 표기법) : color_top 와 같이 중간에 '_'를 사용합니다.</li>
+						 <li>캐멀 노테이션(로어 캐멀 표기법) : colorTop와 같이 두번째 단어의 첫 글자를 대문자를 사용합니다.</li>
+						 <li>파스칼 노테이션(어퍼 캐멀 표기법) : ColorTop와 같이 모든 단어의 첫 글자를 대문자를 사용합니다.</li>
+					</ul>
+					<h3 id="intro3-3" class="page-header">변수 종류</h3>
+					<div class="panel panel-default">
+						<div class="panel-body">
+							지역변수 : 특정 범위 안에서만 사용하는 변수 <br>
+							전역변수 : 모든 영역 안에서 사용하는 변수<br>
+							매개변수(파라미터) : 함수 외부에서 함수 내부로 데이터를 전달하기 위한 변수 <br>
+							멤버변수(프로퍼티) : 클래스 내부에서 만들어지면 개체에서 사용하는 변수 
+						</div>
+					</div>	
+
+					<h4>지역변수/ 전역변수<a href="javascript03.html"><button type="button" class="btn btn-default">view</button></a></h3> </h4>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+	&lt;html lang="en"&gt;
+	&lt;head&gt;
+		&lt;meta charset="UTF-8"&gt;
+		&lt;title&gt;Document&lt;/title&gt;
+		&lt;script&gt;
+
+			var x1 = 1000; // (전역)변수 x1에 숫자를 1000을 저장
+			var x2 = 2000; // (전역)변수 x2를 숫자를 2000을 저장
+			var x3;			//(전역)변수 x3를 선언
+
+			x1 = 100;  //(전역)변수 x1에 숫자를 1000에서 100으로 변경
+			x2 = 200; //(전역)변수 x2에 숫자를 2000에서 200으로 변경
+
+			function func(){
+
+				var x1 = 3000;  //변수 x1에 숫자를 3000을 저장
+				var x2 = 4000; // 변수 x2에 숫자를 4000을 저장
+
+				 x1 = 300;  // (지역)변수 x1에 숫자를 3000에서 300으로 변경
+				 x2 = 400;  // (지역)변수 x2를 숫자를 4000에서 400으로 변경
+				 x3 = 500;			//(지역)변수 x3에 숫자 500을 저장 
+
+				document.write("함수 안&lt;br&gt;");
+				document.write(x1);
+				document.write("&lt;br&gt;");
+				document.write(x2);
+			}
+			func();
+
+			document.write("함수 밖&lt;br&gt;");
+			document.write(x1);
+			document.write("&lt;br&gt;");
+			document.write(x2);
+		
+
+			
+		&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		
+	&lt;/body&gt;
+	&lt;/html&gt;
+</code></pre>
+
+				<h4>매개변수<a href="javascript04.html"><button type="button" class="btn btn-default">view</button></a></h4>								
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;Document&lt;/title&gt;
+	
+	&lt;script&gt;
+		// 화면에 숫자 1000을 출력하세요
+		document.write(1000); 
+		document.write("&lt;br&gt;&lt;br&gt;"); 
+		// 화면에 문자 javascript를 출력하세요 
+		document.write("javascript"); 
+		document.write("&lt;br&gt;&lt;br&gt;"); 
+
+		//변수(x1)에 문자열 "html"을 저장하고 출력하세요
+
+		var x1 = "html";
+		document.write(x1);
+		document.write("&lt;br&gt;&lt;br&gt;");
+
+		//함수(func1)를 이용해서 화면에 "css"를 출력하세요
+		function func1 (){
+			document.write("css");
+			document.write("&lt;br&gt;&lt;br&gt;");
+		} 
+		func1();
+
+		//매개변수를 이용해서 화면에"jquery"를 출력하세요
+		function func2(str){
+			document.write(str);
+			document.write("&lt;br&gt;&lt;br&gt;");
+		}
+		func2("jquery");
+
+		//매개변수를 이용해서 화면에 "javascript  jquery"를 풀력하세요.
+		function func3(str1, str2){
+			document.write(str1, " " + str2);
+			document.write("&lt;br&gt;&lt;br&gt;");
+		}
+		func3("javascript","jquery");
+
+
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+					<h3 id="intro3-4" class="page-header">변수 유형(자료형)</h3>
+					<div class="table-responsive">
+						<table class="table table-striped table-bordered table-hover">
+							<caption>변수 유형의 데이터 타입 표</caption>
+							<colgroup>
+								<col>
+								<col>
+								<col>
+								<col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<td class="ce" rowspan="7">데이터 타입</td>
+									<td class="ce" rowspan="6">원시 타입</td>
+									<td>숫자(Number)</td>
+									<td>숫자에는 정수와 실수를 구분하지 않고 사용합니다.</td>
+								</tr>
+								<tr>
+									<td>문자(String)</td>
+									<td>문자를 사용합니다.</td>
+								</tr>
+								<tr>
+									<td>논리값(Boolean)</td>
+									<td>데이터의 참(true)과 거짓(false) 사용합니다.</td>
+								</tr>
+								<tr>
+									<td>특수값(null)</td>
+									<td>null은 아무런 값이 없는 경우를 의미합니다.</td>
+								</tr>
+								<tr>
+									<td>특수값(undefined)</td>
+									<td>undefined은 정의되지 않은 상태를 의미합니다.</td>
+								</tr>
+								<tr>
+									<td>심벌(symbol)</td>
+									<td>심벌은 자기 자신을 제외한 유일한 값입니다.</td>
+								</tr>
+								<tr>
+									<td class="ce">객체타입</td>
+									<td colspan="2">객체 유형도 사용할 수 있습니다.</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					 <h4>문자형</h4>
+					 <p>문자형(String) 데이터는 다음과 같이 문자나 숫자를 큰따옴표("") 또는 작은 따옴표('')로 감싸고 있습니다.
+					 또한 문자형 데이터에 html 태그를 포함하여 출력하며누 태그로 인식합니다.</p>
+						<div class="panel panel-default">
+							<div class="panel-body">
+								기본형 : var 변수 ="사용할 문자나 숫자";<br>
+								var s="javascript" ;<br>
+								var num="100";<br>
+								var tag="&lt;h1&gt; string&lt;/h1&gt;";
+							</div>
+						</div>
+				
+
+					 <h4>숫자형</h4>
+					 <p>숫자형(Number) 데이터는 단어의 의미 그대로 숫자를 의미합니다. 만약"100"과 같이 큰따옴표가 숫자를 감싸고 있다면 
+					 숫자가아닌 문자형 데이터 입니다. 이 경우에는 Number("100")를 이용하면 문자형 데이터를 숫자형 데이터로 바꿀 수 있습니다.</p>
+					 <div class="panel panel-default">
+						<div class="panel-body">
+							기본형 : var 변수 = 숫자; 또는 Nuber("문자형 숫자");<br>
+							var s=100 ;<br>
+							var t=Number("500"); // "500" →500
+						</div>
+					</div>	
+
+					<h4>논리형</h4>
+					 <p>논리형은 (Boolem) 데이터는 tre(참) 또는 거짓(false)가 있습니다. 이 데이터는 주로 2개의 데이터를 비교할 때 나오는 결과 입니다. 예를 들어 '100보다 10이 크다'는 잘못된
+					 비교이브로 false라는 결과를 반환하게 됩니다. 논리형 데이터의 기본형은 다음과 같습니다.</p>
+					 <div class="panel panel-default">
+						<div class="panel-body">
+							기본형 : var 변수 = troe or false; 또는 Boolean(데이터)<br>
+							var s=true;<br>
+							var t=10&gr;=10  //false
+							var k =Boolean("hello"); //true
+						</div>
+					</div>
+					<p>Boolean()메서드 데이터를 입력하면 논리형 데이터인 true 또는 false를 반환 합니다 Boolean()메서느는 숫자 0과 null , undefined, 빈문자("")를 제외한 모든 데이터에 대해 true를 반환합니다. 다음과 같이 Boolean()메서느에 숫자 0을 입력하면 false라는 값을 반환합니다. 그리고 Boolean()메서드에 "홍길동"을 입력하면 true를 반환합니다. </p>
+					<div class="panel panel-default">
+						<div class="panel-body">
+							var m=Boolean(0) //false <br>
+							var k = Boolean ("홍길동") //true
+						</div>
+					</div>
+					<p>다음 논리형 값, 비교 연산자, Boolean 메서드를 사용해 변수에 논리형 데이터를 저장한 후 문서에 출력하는 예제외 결과 입니다.</p>
+<pre class="line-numbers language-markup"><code> &lt;script&gt;
+			var a = true;
+			var b = false;
+			var c = 10 > 5;  //true
+			var d = Boolean(null) //false
+			
+			document.write(a,"&lt;br&gt;");
+			document.write(b,"&lt;br&gt;");
+			document.write(c,"&lt;br&gt;");
+			document.write(d,"&lt;br&gt;");
+
+	&lt;/script&gt;
+</code></pre>
+
+					<h4>변수검사<a href="javascript02.html"><button type="button" class="btn btn-default">view</button></a></h4>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;Javascript02&lt;/title&gt;
+	&lt;script&gt;
+		var x1 = 30;  			//숫자 저장
+		var x2 = "30"; 			//문자열 저장
+		var x3 = "Javascript";  //문자열 저장
+		var x4; 					//선언
+		var x5 = function(){};  //함수 저장
+		var x6 ={}; 				// 객체 선언
+		var x7 =Symaol(); 		//심볼선언
+
+		document.write(typeof x1);
+		document.write("&lt;br&gt;");
+		document.write(typeof x2);
+		document.write("&lt;br&gt;");
+		document.write(typeof x3);
+		document.write("&lt;br&gt;");
+		document.write(typeof x4);
+		document.write("&lt;br&gt;");
+		document.write(typeof x5);
+		document.write("&lt;br&gt;");
+		document.write(typeof x6);
+		document.write("&lt;br&gt;");
+		document.write(typeof x7);
+
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+					
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro4" class="page-header">배열</h2>
+					<p class="lead">배열은 <strong>여러개의 데이터</strong>를 순차적으로 저장하는 저장소입니다.</p>
+					
+					<h3 id="intro4-1" class="page-header">배열 선언<a href="javascript06.html"><button type="button" class="btn btn-default">view</button></a></h3>
+					<div class="panel panel-default">
+						<div class="panel-heading">배열 사용하는 방법</div>
+						<div class="panel-body">
+							var 변수명 = [값1, 값2, 값3.....]
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">배열 사용하는 방식1</div>
+						<div class="panel-body">
+						var arr1 = new Array();<br>
+						arr1[0] = 100;<br>	
+						arr1[1] = 200;	
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">배열 사용하는 방식2</div>
+						<div class="panel-body">
+						var arr2 = new Array(100,200);
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">배열 사용하는 방식3</div>
+						<div class="panel-body">
+						var arr3 = [100,200];
+						</div>
+					</div>
+
+					<h4>배열 객체의 메서드 및 속성</h4>
+					<table class="table table-striped table-bordered table-hover">
+						<tbody>
+							<tr>
+								<th>종류</th><th>설명</th>
+							</tr>
+							<tr>
+								<td>join(연결문자)</td>
+								<td>배열 객체의 데이터 문자를 연결 문자 기준으로 1개의 문자형 데이터로 반환합니다. </td>
+							</tr>
+							<tr>
+								 <td>reverse()</td>
+								 <td>	배열 객체의 데이터 순서를 거꾸로 바꾼 후 반환합니다.</td>
+							</tr>
+							<tr>
+								<td>sort()</td>
+								<td>배열 객테의 데이터를 오름차순으로 정렬합니다.</td>
+							</tr>
+							<tr>
+								<td>slice(index1, index2)</td>
+								<td>배열 객체의 데이터 중 원하는 인덱스 구간만큼 잘라서 배역 객체로 가져옵니다.</td>
+							</tr>
+							<tr>
+								<td>splice()</td>
+								<td>배역객체의 지정 데이터를 삭제하고 그 구간애 샤새 데이터를 삽입할 수 있습니다.</td>
+							</tr>
+							<tr>
+								<td>concat()</td>
+								<td>2개의 배열 객체를 하나로 결합합니다.</td>
+							</tr>
+							<tr>
+								<td>pop()</td>
+								<td>배열레 저장된 데이터 중 마지막 인덱스에 저장된 데이터를 삭제합니다.</td>
+							</tr>
+							<tr>
+								<td>push(new date)</td>
+								<td>배열 객체의 마지막 인덱스에 새 데이터를 삽입합니다.</td>
+							</tr>
+							<tr>
+								<td>shift()</td>
+								<td>배열 객체에 저장된 데이터 중 첫번째 인덱스에 저장된 데이터를 삭제합니다.</td>
+							</tr>
+							<tr>
+								<td>unshift(new date)</td>
+								<td>배열 객체의 가장 앞의 인덱스에 새 데이터를 삽입합니다.</td>
+							</tr>
+							<tr>
+								<td>length</td>
+								<td>배열레 저장된 총 데이터의 개수를 반환합니다.</td>
+							</tr>
+								
+						</tbody>
+					</table>
+
+
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;배열&lt;/title&gt;
+&lt;/head&gt;
+	&lt;script&gt;
+		//변수  X = 100; 변수 Y = 200을 저장한 다음 출력해 주세요.!!
+
+		var x =100;
+		var y = 200;
+
+		document.write(x);
+		document.write("&lt;br&gt;");
+		document.write(y);
+		document.write("&lt;br&gt;&lt;br&gt;");
+
+		//배열을 이용해서 화면에 100과 200을 출력하세요!
+		var arr1 = new Array();
+		arr1[0] = 100; //첫번째 배열 저장소에 100을 저장
+		arr1[1] = 200; //두번째 배열 저장소에 200을 저장
+
+		document.write(arr1[0] );
+		document.write("&lt;br&gt;");
+		document.write(arr1[1] );
+		document.write("&lt;br&gt;&lt;br&gt;");
+
+		//배열을 선언과 동시에 초기화하여 100과 200을 출력하세요!!
+		var arr2 = new Array(100,200);
+
+		document.write(arr2[0] );
+		document.write("&lt;br&gt;");
+		document.write(arr2[1] );
+		document.write("&lt;br&gt;&lt;br&gt;");
+
+		//배열을 선언하지 않고 100과 200을 출력하세요!!
+		var arr3 = [100, 200];
+
+		document.write(arr3[0] );
+		document.write("&lt;br&gt;");
+		document.write(arr3[1] );
+		document.write("&lt;br&gt;&lt;br&gt;");
+
+		//배열의 크기 구하기
+		var arr4 = [100,200,300,400,500];
+
+		document.write(arr4.length);
+		document.write("&lt;br&gt;&lt;br&gt;");
+
+		//배열의 합 구하기 
+		var arr5 = [100,200,300,400,500];
+		var sum = 0;
+
+		for(var i=0; i&lt;arr5.length; i++){
+			// sum = 100+200+300+400+500;
+			// sum = arr5[0]+arr5[1]+arr5[2]+arr5[3]+arr5[4]
+			// sum = arr5[i]+arr5[i]+arr5[i]+arr5[i]+arr5[i]
+			sum = sum + arr5[i];
+			// 0 	  = 0 + 100;
+			// 100 = 100 + 200;
+			// 300 = 300 + 300;
+			// 600 = 600 + 400;
+			// 1000=1000+500;
+			// 1500		
+		}
+		document.write(sum);
+
+	&lt;/script&gt;
+&lt;body&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro5" class="page-header">연산자</h2>
+					<p class="lead">자바스크립트는 다양한 연산자를 통해 계산 작업을 할 수 있습니다.</p>
+
+						<h3 id="intro5-1" class="page-header">산술 연산자</h3>
+
+						<table class="table table-striped table-bordered table-hover">
+							<caption>산술연산자 표</caption>
+								<thead>
+									<tr>
+										<th>종류</th>
+										<th>예시</th>
+										<th>설명</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><code>+</code></td>
+										<td>x + y</td>
+										<td>더하기</td>
+									</tr>
+
+									<tr>
+										<td><code>-</code></td>
+										<td>x - y</td>
+										<td>빼기</td>
+									</tr>
+
+									<tr>
+										<td><code>*</code></td>
+										<td>x * y</td>
+										<td>곱하기</td>
+									</tr>
+
+									<tr>
+										<td><code>/</code></td>
+										<td>x / y</td>
+										<td>나누기</td>
+									</tr>
+
+									<tr>
+										<td><code>%</code></td>
+										<td>x % y</td>
+										<td>나머지</td>
+									</tr>
+							</tbody>
+						</table>
+
+					<h4>산술 연산자<a href="javascript07.html"><button type="button" class="btn btn-default">view</button></a></h4>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;Document&lt;/title&gt;
+	&lt;script&gt;
+		var x = 100;
+		var y = 200;
+
+		document.write(x+y); // 300
+		document.write('&lt;br&gt;');
+		document.write(x-y); // -100
+		document.write('&lt;br&gt;');
+		document.write(x*y); // 2000
+		document.write('&lt;br&gt;');
+		document.write(x/y); // 0.5
+		document.write('&lt;br&gt;');
+		document.write(x%y); //100
+		document.write('&lt;br&gt;');
+
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+						<h3 id="intro5-2" class="page-header">복합 연산자</h3>
+						<table class="table table-striped table-bordered table-hover">
+							<caption>복합 연산자</caption>
+								<thead>
+									<tr>
+										<th>종류</th>
+										<th>예시</th>
+										<th>설명</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><code>+=</code></td>
+										<td>x = x+10</td>
+										<td>x+=10</td>
+									</tr>
+									<tr>
+										<td><code>-=</code></td>
+										<td>x = x-10</td>
+										<td>x-=10</td>
+									</tr>
+									<tr>
+										<td><code>*=</code></td>
+										<td>x = x*10</td>
+										<td>x*=10</td>
+									</tr>
+									<tr>
+										<td><code>/=</code></td>
+										<td>x = x/10</td>
+										<td>x/=10</td>
+									</tr>
+									<tr>
+										<td><code>%=</code></td>
+										<td>x = x%10</td>
+										<td>x%=10</td>
+									</tr>
+
+									
+								</tbody>
+						</table>
+						<h4>복합 연산자<a href="javascript08.html"><button type="button" class="btn btn-default">view</button></a></h4>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;복합연산자&lt;/title&gt;
+	&lt;script&gt;
+		var x = 10;
+		var y = 20;
+		
+		//x = x+10;
+		//x + =10;
+	 
+		//y = y-10 ;  
+		//y - = 10 ;
+
+		// x = x * 10;
+		// x* = 10;
+
+		// y = y/10;
+		// y/=10;
+
+		// x = x % 10;
+		// x% = 10; 
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+						<h4>복합 연산자를 이용한 태이블 만들기<a href="javascript09.html"><button type="button" class="btn btn-default">view</button></a></h4>
+						<h3 id="intro5-3" class="page-header">증감 연산자</h3>
+						<div class="table-responsive">
+						<table class="table table-striped table-bordered table-hover">
+							<caption>증감 연산자 표</caption>
+							<thead>
+								<tr>
+									<th>종류</th>
+									<th>예시</th>
+									<th>설명</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><code>++</code></td>
+									<td>x = x + 1</td>
+									<td>x++ 또는 ++x</td>
+								</tr>
+								<tr>
+									<td><code>--</code></td>
+									<td>x = x - 1</td>
+									<td>x-- 또는 --x</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+						<h4>증감 연산자<a href="javascript10.html"><button type="button" class="btn btn-default">view</button></a></h4>
+<pre class="line-numbers language-markup"><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;증감 연산자&lt;/title&gt;
+	&lt;script&gt;
+		var num1 = 10;
+		var num2 = 20;
+		var result;
+
+		num1--;		//9
+		document.write(num1, "&lt;br&gt;");
+
+		num1++;		//10
+		document.write(num1, "&lt;br&gt;");
+
+		result = num2++;		//20 21
+		document.write(result, "&lt;br&gt;");
+		document.write(num2, "&lt;br&gt;");
+
+		result = ++num2;		//20 21
+		document.write(result, "&lt;br&gt;");
+		document.write(num2, "&lt;br&gt;");
+
+
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+						<h3 id="intro5-4" class="page-header">비교 연산자</h3>
+						<p>비교연산자는 비교할 때 사용하며, 결과 값은 true(참) 또는 false(거짓)로 반환한다.</p>
+						<div class="table-responsive">
+							<table class="table table-striped table-bordered table-hover">
+								<caption>비교 연산자 표</caption>
+								<thead>
+									<tr>
+										<th>종류</th>
+										<th>예시</th>
+										<th>설명</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><code>==</code></td>
+										<td>x == y</td>
+										<td>좌변과 우변이 같다</td>
+									</tr>
+									<tr>
+										<td><code>===</code></td>
+										<td>x === y</td>
+										<td>좌변과 우변이 같다. 데이형도 같다.</td>
+									</tr>
+									<tr>
+										<td><code>!=</code></td>
+										<td>x != y</td>
+										<td>좌변과 우변이 다르다.</td>
+									</tr>
+									<tr>
+										<td><code>!==</code></td>
+										<td>x !== y</td>
+										<td>좌변과 우변이 다르다. 데이형도 다르다.</td>
+									</tr>
+									<tr>
+										<td><code>&gt;</code></td>
+										<td>x &gt; y</td>
+										<td>좌변과 우변보다 크다.</td>
+									</tr>
+									<tr>
+										<td><code>&lt;</code></td>
+										<td>x &lt; y</td>
+										<td>좌변과 우변보다 작다.</td>
+									</tr>
+									<tr>
+										<td><code>&gt;=</code></td>
+										<td>x &gt;= y</td>
+										<td>좌변과 우변보다 크거나 같다.</td>
+									</tr>
+									<tr>
+										<td><code>&lt;=</code></td>
+										<td>x &lt;= y</td>
+										<td>좌변과 우변보다 작거나 같다.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<h4>비교 연산자<a href="javascript11.html"><button type="button" class="btn btn-default">view</button></a></h4>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;11&lt;/title&gt;
+		&lt;script&gt;
+			var x = 10;
+			var y = 20;			//숫자
+			var a = 10;
+			var b = "20";		//문자
+
+
+			document.write(x==y);
+			document.write("&lt;br&gt;");
+			document.write(x==a);
+			document.write("&lt;br&gt;");
+			document.write(y==b);
+			document.write("&lt;br&gt;");
+			document.write(y===b);
+			document.write("&lt;br&gt;");
+			document.write(x!=y);
+			document.write("&lt;br&gt;");
+			document.write(x=!y);
+			document.write("&lt;br&gt;");
+			document.write(x&gt;y);
+			document.write("&lt;br&gt;");
+			document.write(x&lt;y);
+			document.write("&lt;br&gt;");
+			document.write(x&gt;=y);
+			document.write("&lt;br&gt;");
+			document.write(x&lt;=y);
+			document.write("&lt;br&gt;");
+
+
+		&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+						<h3 id="intro5-5" class="page-header">논리 연산자</h3>
+						<div class="table-responsive">
+							<table class="table table-striped table-bordered table-hover">
+								<caption>논리 연산자 표</caption>
+								<thead>
+									<tr>
+										<th>종류</th>
+										<th>예시</th>
+										<th>설명</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><code>&&</code></td>
+										<td>x && y</td>
+										<td>둘다 값이  true인경우 true를 반환합니다.</td>
+									</tr>
+									<tr>
+										<td><code>||</code></td>
+										<td>x || y</td>
+										<td>둘 중 하나 이상이 true인 경우 true를 반환합니다.</td>
+									</tr>
+									<tr>
+										<td><code>!</code></td>
+										<td>!x</td>
+										<td>반대 값을 반환합니다.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<h4>논리 연산자<a href="javascript12.html"><button type="button" class="btn btn-default">view</button></a></h4>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;논리연산자&lt;/title&gt;
+	&lt;script&gt;
+		var a = 10;
+		var b = 20;
+
+		document.write(false ||false); 	//false;
+		document.write("&lt;br&gt;");
+		document.write(false ||true);		//true;
+		document.write("&lt;br&gt;");
+		document.write(true || true);  	//true;
+		document.write("&lt;br&gt;");
+
+		document.write(false && false); //false;
+		document.write("&lt;br&gt;");
+		document.write(false && true); //false;
+		document.write("&lt;br&gt;");
+		document.write(true && true);  //true;
+		document.write("&lt;br&gt;");
+
+		document.write(!true);  //false;
+		document.write("&lt;br&gt;");
+		document.write(!false);  //true;
+		document.write("&lt;br&gt;");
+
+		document.write(a&gt;b || b &gt;=m || m&gt;n); //false;
+		document.write("&lt;br&gt;");
+		document.write(a &gt;b || b&gt;=m || m&lt;=n ); //true;
+		document.write("&lt;br&gt;");
+
+
+		document.write(a&gt;b && a &lt; b); //false;
+		document.write("&lt;br&gt;");
+		document.write(a&gt;b && a &lt; b && a &gt;=b); //false; 
+		document.write("&lt;br&gt;");
+		document.write(a&gt;200 || 50 &lt;b); //false; 
+		document.write("&lt;br&gt;");
+		document.write(!(a&gt;200 )); //false; 
+		document.write("&lt;br&gt;");
+
+
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+						<h3 id="intro5-6" class="page-header">문자 결합 연산자</h3>
+						<h4>문자 결합연산자<a href="javascript13.html"><button type="button" class="btn btn-default">view</button></a></h4>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;문자 결합 연산자&lt;/title&gt;
+	&lt;script&gt;	
+		var x1 = 100;		//숫자(number)
+		var x2 = "javescript"; //문자 (string)
+		var x3 = "100"; //문자 (string)
+		var x4 = "200"; //문자 (string)
+
+		document.write(x1 + 100);		//숫자 + 숫자
+		document.write("&lt;br&gt;");
+		document.write(x1 + x2);  //숫자 + 문자 
+		document.write("&lt;br&gt;");	
+		document.write(x3 + x4);  //숫자 + 문자
+		document.write("&lt;br&gt;");
+		document.write(x1 + true);  
+		document.write("&lt;br&gt;");	
+		document.write(x1 + null);  
+		document.write("&lt;br&gt;");
+		document.write(true + true);
+		document.write("&lt;br&gt;");
+		document.write(true +false );
+		document.write("&lt;br&gt;"); 
+		document.write(true +null );
+		document.write("&lt;br&gt;");
+
+		x = "" + x1 
+		document.write(x1);
+		document.write("&lt;br&gt;");	
+		document.write(typeof(x1));	 	  	
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+
+						<h3 id="intro5-7" class="page-header">연산자 우선순위</h3>
+						<table class="table table-striped table-bordered table-hover">
+							<thead>
+								<tr>
+									<th>우선순위</th>
+									<th>연산자</th>
+									<th>설명</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>괄호/대괄호</td>
+									<td>()[]</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>단항 연산자</td>
+									<td><code>!</code>, <code>++</code>, <code>--</code></td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>곱셈/나눔셈 연산자</td>
+									<td><code>*</code>, <code>/</code>, <code>%</code></td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>덧셈/뺄셈 연산자</td>
+									<td><code>+</code>, <code>-</code></td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>비교 연산자</td>
+									<td><code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code></td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td>비교 연산자</td>
+									<td><code>==</code>, <code>===</code>, <code>!=</code>, <code>!==</code></td>
+								</tr>
+								<tr>
+									<td>7</td>
+									<td>논리 곱 연산자</td>
+									<td><code>&&</code></td>
+								</tr>
+								<tr>
+									<td>8</td>
+									<td>논리 합 연산자</td>
+									<td><code>||</code></td>
+								</tr>
+								<tr>
+									<td>9</td>
+									<td>대입 연산자</td>
+									<td><code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code></td>
+								</tr>
+								<tr>
+									<td>10</td>
+									<td>쉼표</td>
+									<td><code>,</code></td>
+								</tr>
+							</tbody>
+						</table>
+
+						<h3 id="intro5-8" class="page-header">정리</h3>
+						<h4>적정체중 구하기<a href="javascript14.html"><button type="button" class="btn btn-default">view</button></a></h4>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;적정 체중 구하기&lt;/title&gt;
+	&lt;script&gt;
+		//적정 체중 = (본인 신장 - 100) * 0.9;
+
+		// var userHegiht = 174; 	//키
+		// var userWeight = 90;	//몸무게
+		// var normal = (userHegiht - 100) * 0.9;
+
+		
+
+		var name = prompt("당신의 이름은?","");
+		var height = prompt("당신의 키는?", "0");
+		var weight = prompt("당신의 몸무게는?", "0");
+
+		var normal = (height - 100) * 0.9;
+		var result = weight &gt;= normal - 5 && weight &lt;= normal + 5;
+		console.log(result);
+		result = result ? "적정 체중입니다." : "적정 체중이 아닙니다.";
+		document.write(result+"님은"+result);
+
+
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+						<h4>지출 내역구하기<a href="javascript15.html"><button type="button" class="btn btn-default">view</button></a></h4>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;지출 내역구하기&lt;/title&gt;
+	&lt;script&gt;
+		// var price1 = 3000;
+		// var price2 = 6000;
+		// var price3 = 3000;
+
+		// var total = price1+ price2 + price3;
+		// var result = total &gt; 10000 ? : "초과되었습니다." : "돈 관리 잘했어요!" 
+		
+		var price1 = prompt("당신의 교통비는?","");
+		var price2 = prompt("당신의 식비는?", "0");
+		var price3 = prompt("당신의 음료비는?", "0");
+
+		price1 = Number(price1);
+		price2 = Number(price2);
+		price3 = Number(price3);
+
+		var total = price1+ price2 + price3;
+		var result = total &gt; 10000 ? total - 1000 + "초과되었습니다." : "돈 관리 잘했어요!" 
+
+		document.write(result);
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+					
+						
+						
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro6" class="page-header">조건문</h2>
+					<p class="lead">자바스크립트 조건문은 조건식에 따라 참(true)인지, 거짓(flase)인지에 따라 자바스크립 코드를 제어하는 제어문 입니다.</p>
+
+					<h3 id="intro6-1" class="page-header">if문<a href="javascript16.html"><button type="button" class="btn btn-default">view</button></a></h3>
+					<div class="panel panel-default">
+						<div class="panel-body">
+							if(조건식){<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;//실행코드<br>
+							}
+						</div>	
+					</div>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;Document&lt;/title&gt;
+	&lt;script&gt;
+		var x = 100;		//변수 x에 숫자를 100을 저장
+		
+		if(x &gt; 200) {		//변수 x가 200보다 크면 실행(true)
+			//실행 소스
+			document.write(x);
+		}
+
+		if(x &lt; 200) {		//변수 x가 200보다 작으면 실행(true)
+			//실행 소스
+			document.write(x,"&lt;br&gt;");
+		}
+
+		if(true) {		
+			
+			document.write(x,"&lt;br&gt;");
+		}
+
+		if(false) {		
+			
+			document.write(x,"&lt;br&gt;");
+		}
+
+		//통화량 구분하기
+		var min = prompt("당신의 하루 통화량은 몇 분인가요?" , "0");
+		if(min &gt; 60){
+			document.write("당신은 전화를 많이 쓰네요~&lt;br&gt;")
+		}
+
+		//짝수 구분하기
+		var num = prompt("숫자를 입력해 주세요!!", "0");
+
+		if(num % 2==0) {
+			document.write("당신이 입력한 숫자는 짝수 입니다.")
+		}
+
+		//조건식에 논리형 데이터가 아닌 다른 형이 오는 경우 
+		// 0, null, ""(빈문자), unfdeined ---&gt;true
+	
+		var y = 100;
+		
+		if(y){
+			document.write(y);
+		}
+
+		var userName = prompt("당신의 이름은 무엇입니다.". "");
+			if(userName){
+			 document.write(userName + "님 반갑습니다.");
+			}
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+					
+					<h3 id="intro6-2" class="page-header">if ~ else문<a href="javascript17.html"><button type="button" class="btn btn-default">view</button></a></h3>
+					<div class="panel panel-default">
+						<div class="panel-body">
+							if (조건식) {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;//참(true)일 때 실행 코드<br>
+							} else {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;//앞 조건이 거짓(flase)일 때 실행 코드<br>
+							} else {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;//앞 조건이 거짓(flase)일 때 실행 코드<br>
+							}else {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;//앞의 모든 조건이 거짓(flase)일 때 실행 코드<br>
+							}
+						</div>	
+					</div>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;Document&lt;/title&gt;
+	&lt;script&gt;
+		var num = prompt("당신이 좋아하는 숫자는?");
+
+		if(num % 2 == 0){
+			document.write("당신이 좋아하는 숫자는 짝수입니다.")
+		}else{
+			document.write("당신이 좋아하는 숫자는 홀수입니다.")
+		}
+
+		var userID =prompt("아이디를 입력해주세요~");
+		var userPW =prompt("비밀번호를 입력해 주세요");
+
+		if(userID ==="piggyfly" && userPW ==="1234");{
+			document.write("환영합니다&lt;br&gt;");
+		} else {
+			document.write("아이디 또는 비밀번호가 틀렸습니다.&lt;br&gt;");
+		}
+
+		//확인하기
+		var result= confirm("정말로 회원을 탈퇴하시겠습니까?");
+
+		if(result){
+			document.write("탈퇴 처리되었습니다.")
+		}else {
+			document.write("탈퇴 취소되었습니다.")
+		}
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+					<h3 id="intro6-3" class="page-header">다중 if문</h3>
+					<h3 id="intro6-4" class="page-header">switch문</h3>
+					<h3 id="intro6-5" class="page-header">조건부(삼항) 연산자</h3>
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro7" class="page-header">반복문</h2>
+					<p class="lead">자바스크립트는</p>
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro8" class="page-header">함수</h2>
+					<p class="lead">함수는 하나의 <strong>실행문</strong>을 저장하여 사용할 수 있습니다.</p>
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro9" class="page-header">객체</h2>
+					<p class="lead">객체는 데이터와 연산 작업을 담고 있는<strong>기본적인 기능</strong>입니다.</p>
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro10" class="page-header">내장객체</h2>
+					<p class="lead">자바스크립트는</p>
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro11" class="page-header">브라우저객체</h2>
+					<p class="lead">자바스크립트는</p>
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro12" class="page-header">문서객체</h2>
+					<p class="lead">자바스크립트는</p>
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro13" class="page-header">이벤트</h2>
+					<p class="lead">자바스크립트는</p>
+				</div>
+				<!-- //Introduction -->
+			</div>
+			<!-- //col-md-9 -->
+
+			<div class="col-md-3">
+				<div class="bs-sidebar hidden-print" role="complementary">
+					<ul class="nav bs-sidenav">
+						<li><a href="#intro1">자바스크립트</a>
+							<ul class="nav">
+								<li><a href="#intro1_1">자바스크립트 언어의 특징</a></li>
+								<li><a href="#intro1_2">자바스크립트 기술적 요소</a></li>
+							</ul>
+						</li>
+						<li><a href="#intro2">자바스크립트 기초</a>
+								<ul class="nav">
+									<li><a href="#intro2-1">자바스크립트 주석</a></li>
+									<li><a href="#intro2-2">자바스크립트 대문자와 소문자</a></li>
+									<li><a href="#intro2-3">자바스크립트 토큰과 공백문자</a></li>
+									<li><a href="#intro2-4">자바스크립트 문자열 처리</a></li>
+									<li><a href="#intro2-5">자바스크립트 사용방법</a></li>
+								</ul>
+						</li>
+						<li><a href="#intro3">변수</a>
+							<ul class="nav">
+								<li><a href="#intro3-1">변수 선언</a></li>
+								<li><a href="#intro3-2">변수 명</a></li>
+								<li><a href="#intro3-3">변수 종류</a></li>
+								<li><a href="#intro3-4">변수 검사</a></li>
+							</ul>
+						</li>
+						<li><a href="#intro4">배열</a>
+							<ul class="nav">
+								<li><a href="#intro4-1">배열 선언</a></li>
+							
+							</ul>
+						</li>
+						<li><a href="#intro5">연산자</a>
+							<ul class="nav">
+								<li><a href="#intro5-1">산술 연산자</a></li>
+								<li><a href="#intro5-2">대입 연산자</a></li>
+								<li><a href="#intro5-3">증감 연산자</a></li>
+								<li><a href="#intro5-4">비교 연산자</a></li>
+								<li><a href="#intro5-5">논리 연산자</a></li>
+								<li><a href="#intro5-6">문자열 처리 결합 연산자</a></li>
+								<li><a href="#intro5-7">연산자 우선 순위</a></li>
+							</ul>
+						</li>
+
+						<li><a href="#intro6">조건문</a>
+							<ul class="nav">
+								<li><a href="#intro6-1">if문</a></li>
+								<li><a href="#intro6-2">if ~ else 문</a></li>
+								<li><a href="#intro6-3">다중 if문</a></li>
+								<li><a href="#intro6-4">switch문</a></li>
+								<li><a href="#intro6-5">조건부(삼항) 연산자</a></li>
+							</ul>
+						</li>
+
+							<li><a href="#intro7">조건문</a>
+							<ul class="nav">
+								<li><a href="#intro7-1">while문</a></li>
+								<li><a href="#intro7-2">do ~ while 문</a></li>
+								<li><a href="#intro7-3">for문</a></li>
+								<li><a href="#intro7-4">다중 for문</a></li>
+								<li><a href="#intro7-5">break, continue문</a></li>
+							</ul>
+						</li>
+						<li><a href="#intro8">함수</a></li>
+						<li><a href="#intro9">객체</a></li>
+						<li><a href="#intro10">내장객체</a></li>
+						<li><a href="#intro11">자바스크립트</a></li>
+						<li><a href="#intro12">브라우저객체</a></li>
+						<li><a href="#intro13">문서객체</a></li>
+						<li><a href="#intro14">이벤트</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- //col-md-3 -->
+		</div>
+		<!-- //row -->
+	</div>
+	<!-- //container -->
+
+
+	<!-- Footer -->
+	<footer class="bs-footer" role="contentinfo">
+		<div class="container">
+			<ul class="footer-links muted">
+				<li>Currently v1.0</li>
+				<li>&middot;</li>
+				<li><a href="http://webstoryboy.co.kr">webstoryboy</a></li>
+			</ul>
+		</div>
+	</footer>
+	<!-- //Footer -->
+
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/docs.min.js"></script>
+	<script src="assets/js/prism.js"></script>
+
+
+</body>
+</html>
