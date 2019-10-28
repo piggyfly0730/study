@@ -1,0 +1,176 @@
+@charset "utf-8";
+/*
+@import "_var.scss"; //css문서 내부에서 다른 css파일을 연결해 사용할때  가능함
+@import "_mixin"; //.scss파일의 확장명은 생략
+
+variable : 변수명 앞은 반드시 $기호 추가됨, 
+파일명에 _를 먼저 선언하면 .scss 파일이 .css 파일로 실시간 변환 되지 않는다
+*/
+
+//@import를 따로 선언하지 않고 한번에 가능함
+@import "_var", "_mixin";
+
+@font-face{
+  font-family: notoSansKR;
+  font-weight: 400;
+  src: url("../../../fonts/NotoSansKR-Regular.eot");   /* .eot() ie6~8 */
+  src: local("※"), url("../../../fonts/NotoSansKR-Regular.woff2") format("woff2"), url("../../../fonts/NotoSansKR-Regular.woff") format("woff"), url("../../../fonts/NotoSansKR-Regular.otf") format("opentype");  /* woff2, woff, otf/ttf */
+}
+@font-face{
+  font-family: notoSansKR;
+  font-weight: 500;
+  src: url("../../../fonts/NotoSansKR-Medium.eot");
+  src: local("※"), url("../../../fonts/NotoSansKR-Medium.woff2") format("woff2"), url("../../../fonts/NotoSansKR-Medium.woff") format("woff"), url("../../../fonts/NotoSansKR-Medium.otf") format("opentype");
+}
+@font-face{
+  font-family: notoSansKR;
+  font-weight: 700;
+  src: url("../../../fonts/NotoSansKR-Bold.eot");
+  src: local("※"), url("../../../fonts/NotoSansKR-Bold.woff2") format("woff2"), url("../../../fonts/NotoSansKR-Bold.woff") format("woff"), url("../../../fonts/NotoSansKR-Bold.otf") format("opentype");
+}
+
+/* tag reset */
+body, h1, h2, h3, h4, h5, h6, p, ul, button{margin: 0;padding: 0;}
+body{font-family: notoSansKR;font-weight: 400;font-size: 16px;color: #333;line-height: 1.5;}
+h1, h2, h3, h4, h5, h6{font-size: 100%;line-height: 1.2;}
+ul{list-style: none;}
+a:link, a:visited, a:hover, a:active{text-decoration: none;color: inherit}
+address{font-style: normal}
+img{vertical-align: top;border: none}
+button{border: none;background: none;cursor: pointer;font-family: inherit;font-size: inherit;color: inherit}/* 폼요소는 부모로부터 서체 속성 모두를 상속받지 못한다 */
+em{font-style: normal}
+header, nav, section, article, footer{display: block;}
+
+/* common class */
+.f_l{float: left;}
+.f_r{float: right}
+.p_r{position: relative;}
+.p_a{position: absolute;}
+.clearfix:after{content: "";display: block;clear: both;}
+.blind{font-size: 0;line-height: 0;width: 1px;height: 1px;overflow: hidden;position: absolute;top: 0;left: -9999px;text-indent: -9999px}
+.area{width: 1170px;margin: 0 auto;}
+.max_area{max-width: 1920;margin: 0 auto;}
+.bg_gray{background: #a2a5a6;}
+.bg_wblue{background: $wBlue;}
+.bg_dblue{background: $dBlue;}
+
+
+/* skip navigation */
+#skip a{
+  position: absolute;top: 0;left: -9999px;z-index: 1000;
+  &:focus{left: 0;width: 100%;height: 40px;line-height: 40px;text-align: center;background: $wBlue;color: #fff;font-weight: 700}
+}/* 가상요소앞에 &추가 : 부모태그, 
+중첩: 부모태그 안에 자식태그의 스타일을 작성 */
+
+/* =============header=============== */
+#header{
+  position: fixed;top: 0;left: 0;right: 0;height: 100px;z-index: 950;
+  .logo{padding: 22px 0 0 30px;}
+  .logo, .util{position: relative;z-index: 900;}
+}
+
+/* 반복적으로 사용하는 스타일은 @mixin으로 선언하고 @include로 호출한다. 장점은 매개변수를 추가해 각각 다른 값으로 표현 가능함 */
+#header .util{
+  ul{float: left;}
+  .lang{
+    @include radius1(18px);
+    width: 59px;height: 26px;font-size: 14px;border: 2px solid #898989;overflow: hidden;margin: 36px 20px 0 0;
+    a{
+      display: block;height: 26px;line-height: 26px;text-indent: 10px;background: url("../images/common/arr_lang_off.gif") no-repeat 43px 50%;
+      &:hover, &:focus{background-image: url("../images/common/arr_lang_on.gif");color: $wBlue}
+    }
+  }
+  .quick{
+    width: 145px;
+    a{
+      display: block;height: 50px;line-height: 50px;color: #fff;text-indent: 30px;
+      &:hover, &:focus{color: #ffff00}
+    }
+    li:nth-child(1) a{background: $dBlue url("../images/common/icon_site_buy.png") no-repeat 97px 50%}
+    li:nth-child(2) a{background: $wBlue url("../images/common/icon_site_intra.png") no-repeat 100px 50%}
+  }
+}
+
+/* gnb */
+#gnb{position: absolute;top: 0;left: 0;right: 0;border-bottom: 1px solid #ccc;background: #fff url("../images/common/bg_nav.gif") repeat-x;text-align: center}
+#gnb > ul{
+  position: relative;left: -42px;width: 700px;height: 100px;margin: 0 auto;
+  > li{
+    float: left;width: 140px;
+    a{display: block;}
+    > a{position: relative;height: 100px;line-height: 100px;font-size: 18px;font-weight: 700;color: #000;}
+    &.on > a:after{content: "";position: absolute;left: 50px;bottom: 0;width: 40px;height: 5px;background: $wBlue} 
+  }
+}
+#gnb ul li div:before{content: "";display: block;height: 74px;background: no-repeat left bottom}
+#gnb ul .gnb1 div:before{background-image: url("../images/common/icon_lnb_company_off.gif")}
+#gnb ul .gnb2 div:before{background-image: url("../images/common/icon_lnb_product_off.gif")}
+#gnb ul .gnb3 div:before{background-image: url("../images/common/icon_lnb_invest_off.gif")}
+#gnb ul .gnb4 div:before{background-image: url("../images/common/icon_lnb_pr_off.gif")}
+#gnb ul .gnb5 div:before{background-image: url("../images/common/icon_lnb_recruit_off.gif")}
+#gnb ul .gnb1.on div:before{background-image: url("../images/common/icon_lnb_company_on.gif")}
+#gnb ul .gnb2.on div:before{background-image: url("../images/common/icon_lnb_product_on.gif")}
+#gnb ul .gnb3.on div:before{background-image: url("../images/common/icon_lnb_invest_on.gif")}
+#gnb ul .gnb4.on div:before{background-image: url("../images/common/icon_lnb_pr_on.gif")}
+#gnb ul .gnb5.on div:before{background-image: url("../images/common/icon_lnb_recruit_on.gif")}
+#gnb ul li div ul{
+  height: 221px;margin-bottom: 18px;
+  @at-root #gnb ul li + li div ul{border-left: 1px solid #ccc;}/* @at-root는 중첩을 벗어나서 독립적인 선택자로 선언하고 싶을 때 */
+  li a{
+    height: 34px;line-height: 34px;
+    &.blog{
+      @include radius1(13px);
+      margin: 7px 22px;height: 26px;line-height: 26px;color: #fff;font-size: 13px;background: #aaa;
+    }
+  }
+}
+#gnb ul li div ul li:hover .blog, #gnb ul li div ul li .blog:focus{background: $wBlue;color: #fff}
+
+/* depth1 a, depth2 a 활성화 색상 */
+#gnb > ul > li.on > a, #gnb ul li div ul li:hover a, #gnb ul li div ul li a:focus{color: $wBlue}
+
+/* ==========content============== */
+#content{padding-top: 100px;}
+
+/* ==========footer============== */
+#footer{
+  /* footer 내부에서만 사용 가능한 지역변수 */
+  $dGray : #252525;
+  $wGray : #989898;
+  height: 100px;background: $dGray;line-height: 100px;font-size: 14px;
+  .copyright{font-size: 12px;color: $wGray;padding: 0 20px 0 30px;}
+  .foot_right{
+    > ul, .family,  > ul > li{float: left;}
+    .foot_fastlink{
+      position: relative;
+      li{
+        padding-right: 13px;
+        a{display: block;background: no-repeat left center;color: #fff;}
+        &:nth-child(1) a{background-image: url("../images/common/icon_footer_buy_off.png");padding-left: 31px;}
+        &:nth-child(2) a{background-image: url("../images/common/icon_footer_intra_off.png");padding-left: 25px;}
+        a:hover, a:focus{color: $wBlue}
+        &:nth-child(1) a:hover, &:nth-child(1) a:focus{background-image: url("../images/common/icon_footer_buy_on.png")}
+        &:nth-child(2) a:hover, &:nth-child(2) a:focus{background-image: url("../images/common/icon_footer_intra_on.png")}
+      }
+      &:after{content: "";position: absolute;right: 0;top: 50%;margin-top: -7px;width: 1px;height: 14px;background: #aaa;}
+    } 
+    .foot_link li{
+      margin-left: 12px;color: $wGray;
+      .white_bold{color: #fff;font-weight: 700;}
+    }
+  }
+}
+#footer .foot_right .family{
+  position: relative;line-height: 35px;margin: 33px 30px 0 27px;
+  > a{
+    @include boxSizer;
+    display: inline-block;height: 35px;line-height: 35px;border: 1px solid #000;
+  }
+  .site{width: 130px;padding-left: 10px;background: #fff url("../images/common/arr_family_off.gif") no-repeat 102px 50%;}
+  .site:focus, .site:hover, &.on .site{background-image: url("../images/common/arr_family_on.gif");}
+  ul{
+    @include boxSizer;
+    display: none;position: absolute;left: 0;bottom: 35px;width: 130px;padding: 10px;border: 1px solid #000;border-bottom: none;background: #fff;
+  }
+  .go{padding: 0 10px;background: #f00;}
+}

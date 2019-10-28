@@ -1,0 +1,48 @@
+@charset "utf-8";
+@font-face{
+  font-family: notoSansKR;
+  font-weight: 400;
+  src: url("../../../fonts/NotoSansKR-Regular.eot");   /* .eot() ie6~8 */
+  src: local("※"), url("../../../fonts/NotoSansKR-Regular.woff2") format("woff2"), url("../../../fonts/NotoSansKR-Regular.woff") format("woff"), url("../../../fonts/NotoSansKR-Regular.otf") format("opentype");  /* woff2, woff, otf/ttf */
+}
+@font-face{
+  font-family: notoSansKR;
+  font-weight: 500;
+  src: url("../../../fonts/NotoSansKR-Medium.eot");
+  src: local("※"), url("../../../fonts/NotoSansKR-Medium.woff2") format("woff2"), url("../../../fonts/NotoSansKR-Medium.woff") format("woff"), url("../../../fonts/NotoSansKR-Medium.otf") format("opentype");
+}
+
+/* tag reset */
+body, ul, p{margin: 0;padding: 0;}
+body{font-family: notoSansKR;font-weight: 400;font-size: 16px;color: #333}
+ul{list-style: none}
+a:link, a:visited, a:hover, a:active{text-decoration: none;color: inherit}
+
+/* mainSlider */
+#mainSlider, #mainSlider .visual li{width: 100%;height: 790px;}
+#mainSlider{position: relative;}
+#mainSlider .visual li{background: no-repeat center top;line-height: 52px;color: #fff;text-align: center}
+#mainSlider .visual li:nth-child(1){background-image: url("../images/main/bg_visual1.png")}
+#mainSlider .visual li:nth-child(2){background-image: url("../images/main/bg_visual2.png")}
+#mainSlider .visual li:nth-child(3){background-image: url("../images/main/bg_visual3.png")}
+#mainSlider .visual li:nth-child(4){background-image: url("../images/main/bg_visual4.png")}
+#mainSlider .visual li p.kr{padding-top: 192px;font-size: 34px;}
+#mainSlider .visual li p.en{font-size: 50px;font-weight: 500}
+
+#mainSlider .bx-controls-direction a, #mainSlider .bx-controls-auto, #mainSlider .bx-pager{position: absolute;z-index: 100;text-indent: -9999px;}
+
+/* 이전, 다음 버튼 .bx-controls-direction  */
+#mainSlider .bx-controls-direction a{top: 312px;width: 54px;height: 53px}
+#mainSlider .bx-controls-direction .bx-prev{left: 20px;background: url("../images/main/btn_prev.png") no-repeat}
+#mainSlider .bx-controls-direction .bx-next{right: 20px;background: url("../images/main/btn_next.png") no-repeat}
+
+/* play, stop .bx-controls-auto */
+#mainSlider .bx-controls-auto{top: 550px;left: 50%;margin-left: 36.5px;}
+#mainSlider .bx-controls-auto a{display: block;width: 27px;height: 27px;background: url("../images/main/btn_pause_play.png") no-repeat left top}
+#mainSlider .bx-controls-auto a.bx-start{background-position: -27px 0;}/* play버튼 */
+#mainSlider .bx-controls-auto a.active{display: none}
+
+/* 인디케이터 .bx-pager */
+#mainSlider .bx-pager{top: 556px;left: 50%;margin-left: -63.5px;width: 100px;}
+#mainSlider .bx-pager a{float: left;width: 11px;height: 11px;border: 2px solid #fff;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;margin-right: 10px;}
+#mainSlider .bx-pager a.active{background-color: #fff;}

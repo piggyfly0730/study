@@ -1,0 +1,21 @@
+@mixin radius1($num) { 
+  -webkit-border-radius: $num;
+  -moz-border-radius: $num;
+  border-radius: $num;
+}
+@mixin radius2($num1, $num2, $num3, $num4) { 
+  -webkit-border-radius: $num1 $num2 $num3 $num4;
+  -moz-border-radius: $num1 $num2 $num3 $num4;
+  border-radius: $num1 $num2 $num3 $num4;
+}
+@mixin transition($prop, $sec) {
+  -webkit-transition: $prop $sec;
+  -moz-transition: $prop $sec;
+  -o-transition: $prop $sec;
+  transition: $prop $sec;
+}
+@mixin boxSizer {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title> 팝업창 - 자연사랑, 파란마음 글 그림 축제 </title>
+  <link rel="stylesheet" href="../css/common.css">
+  <style>
+    #wrap{width: 370px;height: 554px;}
+    #wrap a{display: block;height: 554px;background: url("img/20190401_14374134.jpg") no-repeat;text-indent: -9999px}
+  </style>
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#wrap a').on('click', function () {
+        //1) 팝업창 닫기
+        window.close();
+
+        //2-1) index 페이지에 상세 페이지가 덮어쓰기 되는 경우
+        //window.opener.location.href = 'http://www.naver.com';
+
+        //2-2) 새로운 페이지를 열어 상세 페이지를 보여주기
+        var newWindow = window.open('about:blank');
+        newWindow.location.href = 'http://www.naver.com';
+        
+        return false;
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="wrap">
+    <a href="">
+      <h1>제 22회 자연사랑, 파란마음 글 그림 축제</h1>
+      <p>삼양그룹, 휴비스와 함께 하는</p>
+      <h2>주최</h2>
+      <ul>
+        <li>삼양사</li>
+        <li>삼양화성</li>
+        <li>휴비스</li>
+      </ul>
+      <p>행사 바로가기</p>
+    </a>
+  </div>
+</body>
+</html>

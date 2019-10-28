@@ -1,0 +1,16 @@
+@charset "utf-8";
+#stroyTab ul{margin-bottom: 30px;}
+#stroyTab ul li{float: left;width: 380px;height: 50px;line-height: 48px;border: 1px solid #ccc;background: #f2f2f2;text-align: center;box-sizing: border-box;cursor: pointer;}
+#stroyTab ul li:hover, #stroyTab ul li.active{background: #00326c;border-color: #00326c;color: #fff}
+#stroyTab ul li + li{margin-left: 15px;}
+#stroyTab .tabpanel{display: none;position: relative;height: 600px;color: #fff;text-align: center;}
+#stroyTab .tabpanel.active{display: block;}
+#stroyTab .tabpanel .bg{height: 530px;}
+#stroyTab #tabpanel1 .bg{background: url("../images/main/img_life1.jpg")}
+#stroyTab #tabpanel2 .bg{background: url("../images/main/img_life2.jpg")}
+#stroyTab #tabpanel3 .bg{background: url("../images/main/img_life3.jpg")}
+#stroyTab .tabpanel .bg h4{padding-top: 163px;font-size: 74px;line-height: 111px;}
+#stroyTab .tabpanel .bg p{position: relative;padding-top: 30px;line-height: 22px;}
+#stroyTab .tabpanel .bg p:before{content: "";position: absolute;top: 0;left: 50%;width: 60px;height: 3px;margin-left: -30px;background: #fff;}
+#stroyTab .tabpanel .bg button{position: absolute;top: 0;left: 0;width: 100%;height: 530px;text-indent: -9999px}
+#stroyTab .tabpanel a{position: absolute;right: 0;bottom: 0;width: 180px;height: 40px;line-height: 40px;padding-left: 43px;box-sizing: border-box;font-size: 14px;background: #999 url("../images/main/arr_more.png") no-repeat 119px 50%;text-align: left}
